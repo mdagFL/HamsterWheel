@@ -1,3 +1,46 @@
 HamsterWheel - Simple RPG engine using OpenGL
 
 ---------------------------------------------
+High Level View
+---------------------------------------------
+
+Two main layers:
+
+
+Core Layer - Handles game objects, rendering, probably audio
+
+RPG Layer - Abstraction above the core layer for RPG fundamentals
+
+---------------------------------------------
+
+Core Layer Components:
+
+
+GameObject -> Contains vertices, material, other general properties/behaviors
+
+Material -> Contains texture and shader
+
+PersistentObject -> Serializable object
+
+---------------------------------------------
+
+RPG Layer Components:
+
+
+Level -> Contains level data 
+
+TileMap -> Contains level data
+
+PlayerData -> Contains persistent player data
+
+UIMenu -> Contains MenuOptions
+
+MenuOption -> Contains text
+
+Dialogue -> Contains text and dialogue properties (voice sfx, spacing information)
+
+DialogueBox -> Displays dialogue
+
+
+---------------------------------------------
+

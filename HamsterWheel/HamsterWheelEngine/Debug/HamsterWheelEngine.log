@@ -1,0 +1,6 @@
+﻿main.obj : error LNK2019: unresolved external symbol __imp__glewInit@0 referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _glfwInit referenced in function _main
+main.obj : error LNK2019: unresolved external symbol _glfwCreateWindow referenced in function _main
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\vendor\GLFW\lib\glfw3.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\vendor\GLEW\lib\glew32.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\dev\git\HamsterWheel\HamsterWheel\Debug\HamsterWheelEngine.exe : fatal error LNK1120: 3 unresolved externals

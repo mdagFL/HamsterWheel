@@ -19,6 +19,25 @@ int main()
 	if (!glewInit() == GLEW_OK)
 		std::cout << "Error initializing GLEW." << std::endl;
 	std::cout << glGetString(GL_VERSION) << std::endl;
+	glClearColor(0, 0, 0, 1);
+
+	glViewport(0, 0, 1280, 720);
+	// glfw main loop
+	while (true)
+	{
+		glClear(GL_CLEAR);
+		
+
+		// immediate mode
+		glBegin(GL_TRIANGLES);
+		glVertex3f(-0.5f, 0.5f, 0.5f);
+		glVertex3f(0.5f, 0.5f, 0.5f);
+		glVertex3f(0, -0.5f, 0.5f);
+		glEnd();
+
+		glfwSwapBuffers(window);
+		glfwPollEvents();
+	}
 	std::cin.ignore();
 	
 }

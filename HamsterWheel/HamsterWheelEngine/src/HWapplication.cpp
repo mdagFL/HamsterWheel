@@ -1,22 +1,41 @@
 
 #include "HWapplication.h"
+#include <iostream>
 
-void HW::HWapplication::Render()
+namespace HW
 {
-	OnRender();
-}
+	void HW::HWapplication::Render()
+	{
+		OnRender();
+	}
 
-void HW::HWapplication::Update()
-{
-	OnUpdate();
-}
+	void HW::HWapplication::Update()
+	{
+		OnUpdate();
+	}
 
-void HW::HWapplication::Init()
-{
-	OnInit();
-}
+	void HW::HWapplication::Init()
+	{
+		OnInit();
+	}
 
-HW::HWapplication::HWapplication()
-{
-	Init();
+	HW::HWapplication::HWapplication()
+	{
+		Init();
+	}
+
+	void HW::HWapplication::OnInit()
+	{
+		std::cout << "base init" << std::endl;
+	}
+
+	void HW::HWapplication::OnRender()
+	{
+
+	}
+
+	void HW::HWapplication::OnUpdate()
+	{
+
+	}
 }

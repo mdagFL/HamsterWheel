@@ -7,15 +7,14 @@ namespace HW
 	{
 	public:
 		void Render();
-		virtual void OnRender() = 0;
+		virtual void OnRender();
 		void Update();
-		virtual void OnUpdate() = 0;
+		virtual void OnUpdate();
 		void Init();
-		virtual void OnInit() = 0;
+		virtual void OnInit();
 
 		HWapplication();
 	private:
-		;
 	};
 
 	HWapplication* CreateApplication();

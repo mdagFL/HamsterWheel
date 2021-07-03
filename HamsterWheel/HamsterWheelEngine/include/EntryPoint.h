@@ -8,7 +8,7 @@
 #include <iostream>
 #include "HWapplication.h"
 
-extern HW::HWapplication* HW::CreateApp();
+extern HW::HWapplication* HW::CreateApplication();
 
 int main()
 {
@@ -46,7 +46,7 @@ int main()
 		glfwPollEvents();
 	}
 
-	
+
 
 	std::cin.ignore();
 	return 0;

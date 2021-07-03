@@ -78,9 +78,13 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -88,13 +92,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\vendor\HamsterWheel\include;.\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)HamsterWheelEngine\include;.\include;$(SolutionDir)\HamsterWheelEngine\vendor\GLFW\include;$(SolutionDir)HamsterWheelEngine\include;.\include;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)vendor\HamsterWheel\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;HamsterWheelEngine.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\lib\glew32s.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLFW\lib-vc2019\glfw3.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -105,15 +110,16 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\vendor\HamsterWheel\include;.\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\HamsterWheelEngine\include;.\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)vendor\HamsterWheel\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;HamsterWheelEngine.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -122,13 +128,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\vendor\HamsterWheel\include;.\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)HamsterWheelEngine\include;.\include;$(SolutionDir)\HamsterWheelEngine\vendor\GLFW\include;$(SolutionDir)HamsterWheelEngine\include;.\include;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)vendor\HamsterWheel\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;HamsterWheelEngine.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\lib\glew32s.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLFW\lib-vc2019\glfw3.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -139,27 +146,28 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>.\vendor\HamsterWheel\include;.\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\HamsterWheelEngine\include;.\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)vendor\HamsterWheel\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;HamsterWheelEngine.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\ClientEntry.h" />
     <ClInclude Include="include\TheGame.h" />
-    <ClInclude Include="vendor\HamsterWheel\include\EntryPoint.h" />
-    <ClInclude Include="vendor\HamsterWheel\include\GameObject.h" />
-    <ClInclude Include="vendor\HamsterWheel\include\HWapplication.h" />
-    <ClInclude Include="vendor\HamsterWheel\include\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\TheGame.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HamsterWheelEngine\HamsterWheelEngine.vcxproj">
+      <Project>{6dd5b0ce-f04e-410a-99af-cda3308767bf}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,8 @@
 #include <iostream>
 #include "TheGame.h"
+#include "EntryPoint.h"
 	
+
 void TheGame::OnInit()
 {
 	std::cout << "Client entry point" << std::endl;
@@ -8,10 +10,20 @@ void TheGame::OnInit()
 
 TheGame::TheGame() : HWapplication()
 {
-	
+	OnInit();
 }
 
-HW::HWapplication* CreateApplication()
+void TheGame::OnRender()
+{
+	std::cout << "game init" << std::endl;
+}
+
+void TheGame::OnUpdate()
+{
+	std::cout << "game init" << std::endl;
+}
+
+HW::HWapplication* HW::CreateApplication()
 {
 	/*
 	TheGame* game = new TheGame();

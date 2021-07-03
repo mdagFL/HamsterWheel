@@ -5,8 +5,8 @@
 class TheGame : public HW::HWapplication
 {
 public:
-	void OnInit();
-	void OnUpdate();
-	void OnRender();
+	void OnInit() override;
+	void OnUpdate() override;
+	void OnRender() override;
 	TheGame();
 };

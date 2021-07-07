@@ -1,12 +1,11 @@
 #pragma once
 
-#include "HWapplication.h"
+#include "Application.h"
 
-class TheGame : public HW::HWapplication
+class TheGame : public HW::Application
 {
 public:
-	void OnInit() override;
-	void OnUpdate() override;
-	void OnRender() override;
-	TheGame();
+	void OnUpdate() const override;
+	void OnRender() const override;
+	TheGame(int width, int height);
 };

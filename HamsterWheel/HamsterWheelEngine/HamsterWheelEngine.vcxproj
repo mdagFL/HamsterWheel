@@ -19,12 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\HWapplication.cpp" />
+    <ClCompile Include="src\Application.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\HWapplication.h" />
+    <ClInclude Include="include\Application.h" />
     <ClInclude Include="include\EntryPoint.h" />
     <ClInclude Include="include\GameObject.h" />
+    <ClInclude Include="include\GLinterface.h" />
     <ClInclude Include="include\Renderer.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -1,33 +1,30 @@
+
+
 #include <iostream>
 #include "TheGame.h"
 #include "EntryPoint.h"
 	
 
-void TheGame::OnInit()
+TheGame::TheGame(int width, int height) : Application(width, height)
 {
-	std::cout << "Client entry point" << std::endl;
+
 }
 
-TheGame::TheGame() : HWapplication()
+void TheGame::OnRender() const
 {
-	OnInit();
+	//std::cout << "game render" << std::endl;
 }
 
-void TheGame::OnRender()
+void TheGame::OnUpdate() const
 {
-	std::cout << "game init" << std::endl;
+	std::cout << "game update" << std::endl;
 }
 
-void TheGame::OnUpdate()
-{
-	std::cout << "game init" << std::endl;
-}
-
-HW::HWapplication* HW::CreateApplication()
+HW::Application* HW::CreateApplication()
 {
 	/*
 	TheGame* game = new TheGame();
-	return (HW::HWapplication*)game;
+	return (HW::Application*)game;
 	*/
-	return new TheGame();
+	return new TheGame(1280, 720);
 }

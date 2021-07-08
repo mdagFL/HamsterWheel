@@ -24,4 +24,8 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="res\shader\default.shader" />
+    <None Include="res\shader\default.shader" />
+  </ItemGroup>
 </Project>

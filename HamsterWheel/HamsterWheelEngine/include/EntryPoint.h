@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "Application.h"
-#include "GLinterface.h"
+#include "Renderer.h"
 
 extern HW::Application* HW::CreateApplication();
 
@@ -11,7 +11,7 @@ int main()
 {
 
 	HW::Application* app = HW::CreateApplication();
-	HW::ReadShaderFile("res/shader/default.shader");
+	HW::Renderer::ReadShaderFile("res/shader/default.shader");
 	app->Run();
 	
 	return 0;

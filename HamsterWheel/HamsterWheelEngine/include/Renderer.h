@@ -4,6 +4,7 @@
 #include <string>
 
 #define GLEW_STATIC
+#include "GameObject.h"
 
 namespace HW
 {
@@ -19,23 +20,24 @@ namespace HW
 		VERTEX,
 		FRAGMENT
 	};
+	
 
 	class Renderer
 	{
 
 	public:
-		static Renderer instance;
-		GLFWwindow* window;
+		static Renderer* _Instance;
 
 		static ShaderProgramSource ReadShaderFile(const char* path);
 		static unsigned int CompileShader(const std::string &source, ShaderType type);
 		static unsigned int CreateShaderProgram(const unsigned int veretxShader, const unsigned int fragmentShader);
 		
+		void RenderObject(GameObject obj);
 
 		Renderer();
 		~Renderer();
 
-		ShaderProgramSource DefaultShaderProgramSource = {
+		ShaderProgramSource _DefaultShaderProgramSource = {
 			// vertex shader
 			"#version 330 core\n"
 			"attribute vec4 position;\n"
@@ -53,10 +55,10 @@ namespace HW
 			"void main()\n"
 			"{\n"
 			"	gl_FragColor = color;\n"
-
 			"};" };
 	private:
 		
+
 
 	};
 }

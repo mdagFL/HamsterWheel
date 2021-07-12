@@ -4,7 +4,7 @@
 #include <string>
 
 #define GLEW_STATIC
-#include "GameObject.h"
+#include "RenderObject.h"
 
 namespace HW
 {

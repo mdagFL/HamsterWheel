@@ -32,6 +32,7 @@
     <ClInclude Include="include\Material.h" />
     <ClInclude Include="include\Renderer.h" />
     <ClInclude Include="include\RenderObject.h" />
+    <ClInclude Include="include\ShaderProgram.h" />
     <ClInclude Include="include\Transform.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

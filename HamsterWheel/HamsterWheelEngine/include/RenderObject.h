@@ -1,34 +1,39 @@
-#include "GameObject.h"
+
 #pragma once
+#include "GameObject.h"
+#include "Renderer.h"
+#include "Material.h"
 
 struct VertexAttribParams
 {
-	int _attribIndex;
-	int _attribStride;
-	int _attribComponents;
-	int _attribType;
-	int _attribOffset;
-	VertexAttribParams(int attribIndex, int attribStride, int attribComponents, int attribType, int attribOffset)
-		: _attribIndex{ attribIndex }, _attribStride{ attribStride }, _attribComponents{ attribComponents },
-		_attribType{ attribType }, _attribOffset{ attribOffset } {}
+	int _Index;
+	int _Stride;
+	int _Comonents;
+	int _Type;
+	int _Offset;
+	VertexAttribParams(int attribIndex, int attribComponents, int attribType, int attribStride, int attribOffset)
+		: _Index{ attribIndex }, _Stride{ attribStride }, _Comonents{ attribComponents },
+		_Type{ attribType }, _Offset{ attribOffset } {}
 	VertexAttribParams() {}
 
 };
 
 namespace HW
 {
-	class RenderObject : public HW::GameObject
+	class RenderObject : public GameObject
 	{
 	public:
 		
 
 		RenderObject();
-		RenderObject(float* vertexBuffer, int* elementBuffer, VertexAttribParams params);
+		RenderObject(float* vertexBuffer, int* elementBuffer, VertexAttribParams params, Material& material);
 		~RenderObject();
+		
 	private:
 		float* _vertexBuffer;
-		int* _elementBuffer;
-
+		unsigned int* _elementBuffer;
+		unsigned int _bufferId;
+		//Material& _material;
 
 		VertexAttribParams _attribParams;
 	};

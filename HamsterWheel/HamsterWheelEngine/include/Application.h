@@ -19,9 +19,10 @@ namespace HW
 		virtual void OnUpdate() const;
 		void Init();
 		void Run();
-		
+		void ResizeWindow(int width, int height);
 		
 		Application(int width, int height);
+		
 	private:
 		GLFWwindow* _window;
 		int _width;

@@ -1,9 +1,17 @@
 #pragma once
 #include "glew.h"
+#include "ShaderProgram.h"
+#define GLEW_STATIC
 
-class Material
+namespace HW
 {
-public:
-	unsigned int _shader;
-	char* _texture;
-};
+	class Material
+	{
+	public:
+		unsigned int _shader;
+		char* _texture;
+		Material(ShaderProgram& shader, char* texture) {}
+		Material() {}
+		~Material()
+	};
+}

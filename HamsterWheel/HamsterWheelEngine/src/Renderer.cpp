@@ -4,7 +4,7 @@
 
 using namespace HW;
 
-void glErrorCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam)
+void HW::glErrorCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam)
 {
 	switch (severity)
 	{
@@ -110,6 +110,11 @@ Renderer::Renderer()
 Renderer::Renderer(int width, int height)
 {
 	Init(width, height);
+}
+
+Renderer::~Renderer()
+{
+	
 }
 
 void Renderer::Init(int width, int height)

@@ -1,9 +1,9 @@
 #pragma once
+#define GLEW_STATIC
 #include "glew.h"
 #include "GLFW/glfw3.h"
 #include <string>
 
-#define GLEW_STATIC
 #include "RenderObject.h"
 
 namespace HW

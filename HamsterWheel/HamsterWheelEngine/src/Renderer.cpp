@@ -104,11 +104,21 @@ ShaderProgramSource Renderer::ReadShaderFile(const char* path)
 
 Renderer::Renderer()
 {
-	
+	Init(1280, 720);
 }
 
 Renderer::Renderer(int width, int height)
 {
+	Init(width, height);
+}
+
+void Renderer::Init(int width, int height)
+{
+	if (!glewInit() == GLEW_OK)
+		std::cout << "Error initializing GLEW." << std::endl;
+
+	std::cout << glGetString(GL_VERSION) << std::endl;
+
 	// GL error callback
 	glEnable(GL_DEBUG_OUTPUT);
 	glDebugMessageCallback(glErrorCallback, nullptr);
@@ -120,10 +130,17 @@ Renderer::Renderer(int width, int height)
 		&unusedIds,
 		true);
 
-	if (!glewInit() == GLEW_OK)
-		std::cout << "Error initializing GLEW." << std::endl;
-	std::cout << glGetString(GL_VERSION) << std::endl;
+	
 	glClearColor(0, 0, 0, 1);
-
 	glViewport(0, 0, width, height);
+	
+	// create 1 VAO to be used by all render objects
+	glGenVertexArrays(1, &_vaoId);
+	glBindVertexArray(_vaoId);
+
+	// enable core profile?
+
+	// other glEnables?
+
 }
+

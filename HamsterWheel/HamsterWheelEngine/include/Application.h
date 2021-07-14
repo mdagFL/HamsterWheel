@@ -1,8 +1,9 @@
 #pragma once
-#define GLEW_STATIC
+
 
 
 #include "glew.h"
+#define GLEW_STATIC
 #include "GLFW/glfw3.h"
 #include <string>
 #include "Renderer.h"

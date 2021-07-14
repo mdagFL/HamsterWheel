@@ -33,6 +33,7 @@ namespace HW
 		unsigned int CompileShader(const std::string &source, ShaderType type);
 		unsigned int CreateShaderProgram(const unsigned int veretxShader, const unsigned int fragmentShader);
 		void RenderObject(GameObject obj);
+		void Init(int width, int height);
 		
 		Renderer();
 		Renderer(int width, int height);
@@ -58,6 +59,7 @@ namespace HW
 			"	gl_FragColor = color;\n"
 			"};" };
 	private:
+		unsigned int _vaoId;
 		
 
 

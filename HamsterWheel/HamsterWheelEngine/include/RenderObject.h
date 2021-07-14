@@ -5,7 +5,7 @@
 #include "Material.h"
 
 struct VertexAttribParams
-{
+{	
 	int _Index;
 	int _Stride;
 	int _Comonents;
@@ -13,9 +13,10 @@ struct VertexAttribParams
 	int _Offset;
 	VertexAttribParams(int attribIndex, int attribComponents, int attribType, int attribStride, int attribOffset)
 		: _Index{ attribIndex }, _Stride{ attribStride }, _Comonents{ attribComponents },
-		_Type{ attribType }, _Offset{ attribOffset } {}
-	VertexAttribParams() {}
-
+		_Type{ attribType }, _Offset{ attribOffset } {}	
+	VertexAttribParams() { 
+		return;
+	}
 };
 
 namespace HW
@@ -26,7 +27,7 @@ namespace HW
 		
 
 		RenderObject();
-		RenderObject(float* vertexBuffer, unsigned int* elementBuffer, VertexAttribParams params, Material& material);
+		RenderObject(float* vertexBuffer, unsigned int* elementBuffer, VertexAttribParams& params, Material& material);
 		~RenderObject();
 		
 	private:

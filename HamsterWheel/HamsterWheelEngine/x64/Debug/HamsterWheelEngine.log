@@ -1,6 +1,1 @@
-﻿  Application.cpp
-C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\src\Application.cpp(53,32): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-  RenderObject.cpp
-  Renderer.cpp
-  Generating Code...
-  HamsterWheelEngine.vcxproj -> C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\Debug\HamsterWheelEngine.lib
+﻿  HamsterWheelEngine.vcxproj -> C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\Debug\HamsterWheelEngine.lib

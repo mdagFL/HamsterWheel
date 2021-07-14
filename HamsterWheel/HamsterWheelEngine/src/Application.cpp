@@ -23,12 +23,8 @@ namespace HW
 		_window = glfwCreateWindow(_width, _height, "game", nullptr, nullptr);
 		glfwMakeContextCurrent(_window);
 
-		if (!glewInit() == GLEW_OK)
-			std::cout << "Error initializing GLEW." << std::endl;
-		std::cout << glGetString(GL_VERSION) << std::endl;
-		glClearColor(0, 0, 0, 1);
-
-		glViewport(0, 0, _width, _height);
+		_Renderer = new Renderer(_width, _height);
+		
 
 	}
 
@@ -70,5 +66,10 @@ namespace HW
 	void HW::Application::OnUpdate() const
 	{
 
+	}
+
+	HW::Application::~Application()
+	{
+		delete _Renderer;
 	}
 }

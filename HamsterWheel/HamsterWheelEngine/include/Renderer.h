@@ -8,6 +8,7 @@
 
 namespace HW
 {
+	void glErrorCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam);
 	struct ShaderProgramSource
 	{
 	public:
@@ -28,13 +29,13 @@ namespace HW
 	public:
 		static Renderer* _Instance;
 
-		static ShaderProgramSource ReadShaderFile(const char* path);
-		static unsigned int CompileShader(const std::string &source, ShaderType type);
-		static unsigned int CreateShaderProgram(const unsigned int veretxShader, const unsigned int fragmentShader);
-		
+		ShaderProgramSource ReadShaderFile(const char* path);
+		unsigned int CompileShader(const std::string &source, ShaderType type);
+		unsigned int CreateShaderProgram(const unsigned int veretxShader, const unsigned int fragmentShader);
 		void RenderObject(GameObject obj);
-
+		
 		Renderer();
+		Renderer(int width, int height);
 		~Renderer();
 
 		ShaderProgramSource _DefaultShaderProgramSource = {

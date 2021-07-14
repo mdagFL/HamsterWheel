@@ -12,6 +12,6 @@ namespace HW
 		char* _texture;
 		Material(ShaderProgram& shader, char* texture) {}
 		Material() {}
-		~Material()
+		~Material();
 	};
 }

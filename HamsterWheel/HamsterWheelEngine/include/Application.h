@@ -5,6 +5,7 @@
 #include "glew.h"
 #include "GLFW/glfw3.h"
 #include <string>
+#include "Renderer.h"
 
 
 namespace HW
@@ -13,6 +14,8 @@ namespace HW
 	class Application
 	{
 	public:
+		
+		Renderer* _Renderer;
 		void Render();
 		virtual void OnRender() const;
 		void Update();
@@ -22,7 +25,7 @@ namespace HW
 		void ResizeWindow(int width, int height);
 		
 		Application(int width, int height);
-		
+		~Application();
 	private:
 		GLFWwindow* _window;
 		int _width;

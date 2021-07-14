@@ -27,7 +27,7 @@ HW::RenderObject::~RenderObject()
 
 }
 
-HW::RenderObject::RenderObject(float* vertexBuffer, int* elementBuffer, VertexAttribParams params, Material& material)
+HW::RenderObject::RenderObject(float* vertexBuffer, unsigned int* elementBuffer, VertexAttribParams params, Material& material)
 {
 	_vertexBuffer = vertexBuffer;
 	_elementBuffer = elementBuffer;

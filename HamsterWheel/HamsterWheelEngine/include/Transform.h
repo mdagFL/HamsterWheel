@@ -13,7 +13,10 @@ namespace HW
 			: X{ x }, Y{ y }, Z{ z } {}
 		float Magnitude()
 		{
-			return (float)sqrt(X * X + Y * Y + Z * Z);
+			double dX = X;
+			double dY = Y;
+			double dZ = Z;
+			return (float)sqrt(dX * dX + dY * dY + dZ * dZ);
 		}
 	};
 

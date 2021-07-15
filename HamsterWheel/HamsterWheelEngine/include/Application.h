@@ -1,12 +1,10 @@
 #pragma once
-
-
-
-#include "glew.h"
 #define GLEW_STATIC
+#include "glew.h"
 #include "GLFW/glfw3.h"
 #include <string>
 #include "Renderer.h"
+#include <vector>
 
 
 namespace HW
@@ -24,6 +22,7 @@ namespace HW
 		void Init();
 		void Run();
 		void ResizeWindow(int width, int height);
+		void AddGameObject(GameObject object);
 		
 		Application(int width, int height);
 		~Application();
@@ -32,6 +31,10 @@ namespace HW
 		int _width;
 		int _height;
 		float _aspectRatio;
+
+		void AddRenderObject(RenderObject object);
+		std::vector<GameObject> _gameObjects;
+		std::vector<RenderObject&> _renderObjects;
 	};
 	
 	Application* CreateApplication();

@@ -12,8 +12,11 @@ int main()
 {
     
 	HW::Application* app = HW::CreateApplication();
-	app->_Renderer->ReadShaderFile("res/shader/default.shader");
+
 	app->Run();
 	
+	//HW::Vector3 vec3(2, 3, 5);
+
+
 	return 0;
 }

@@ -25,6 +25,9 @@ namespace HW
 
 		_Renderer = new Renderer(_width, _height);
 		
+		// TESTING //
+		RenderObject* o = new RenderObject();
+		_renderObjects.push_back(*o);
 
 	}
 
@@ -44,16 +47,8 @@ namespace HW
 	{
 		while (!glfwWindowShouldClose(_window))
 		{
-			glClear(GL_CLEAR);
 
-			// immediate mode for testing
-			glBegin(GL_TRIANGLES);
-			glVertex3f(-0.5f, 0.5f, 0.5f);
-			glVertex3f(0.5f, 0.7f, 0.5f);
-			glVertex3f(-0.8, -0.5f, 0.5f);
-			glEnd();
-
-			glfwSwapBuffers(_window);
+			_Renderer->Render(_renderObjects, *_window);
 
 			OnRender();
 
@@ -61,7 +56,15 @@ namespace HW
 		}
 	}
 
-	
+	void HW::Application::AddGameObject(GameObject object)
+	{
+		
+	}
+
+	void HW::Application::AddRenderObject(RenderObject object)
+	{
+
+	}
 
 	void HW::Application::OnUpdate() const
 	{

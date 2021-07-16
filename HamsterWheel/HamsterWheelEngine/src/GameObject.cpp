@@ -5,3 +5,8 @@ HW::GameObject::GameObject()
 	
 	
 }
+
+HW::GameObject::~GameObject()
+{
+
+}

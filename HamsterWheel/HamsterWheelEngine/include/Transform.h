@@ -11,6 +11,7 @@ namespace HW
 		float Z;
 		Vector3(float x, float y, float z)
 			: X{ x }, Y{ y }, Z{ z } {}
+		Vector3() : X{ 0 }, Y{ 0 }, Z{ 0 } {}
 		float Magnitude()
 		{
 			double dX = X;
@@ -25,8 +26,8 @@ namespace HW
 	public:
 		Vector3 _Position;
 		Vector3 _Rotation;
-		Transform();
-		~Transform();
+		Transform() {}
+		~Transform() {}
 	private:
 	};
 }

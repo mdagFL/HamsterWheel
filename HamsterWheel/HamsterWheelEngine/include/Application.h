@@ -32,9 +32,7 @@ namespace HW
 		int _height;
 		float _aspectRatio;
 
-		void AddRenderObject(RenderObject object);
 		std::vector<GameObject> _gameObjects;
-		std::vector<RenderObject&> _renderObjects;
 	};
 	
 	Application* CreateApplication();

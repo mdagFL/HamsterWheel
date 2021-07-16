@@ -31,7 +31,7 @@ namespace HW
 		RenderObject();
 		RenderObject(float* vertexBuffer, unsigned int* elementBuffer, VertexAttribParams& params, Material& material);
 		~RenderObject();
-		void Render();
+		void Render() const override;
 
 	private:
 		float* _vertexBuffer;

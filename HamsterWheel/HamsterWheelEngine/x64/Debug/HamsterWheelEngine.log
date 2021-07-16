@@ -1,2 +1,8 @@
-﻿  ShaderProgram.cpp
+﻿  Application.cpp
+  GameObject.cpp
+  Material.cpp
+  RenderObject.cpp
+  Renderer.cpp
+  ShaderProgram.cpp
+  Generating Code...
   HamsterWheelEngine.vcxproj -> C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\Debug\HamsterWheelEngine.lib

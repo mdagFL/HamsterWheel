@@ -42,7 +42,7 @@ HW::RenderObject::RenderObject(float* vertexBuffer, unsigned int* elementBuffer,
 	
 }
 
-void HW::RenderObject::Render()
+void HW::RenderObject::Render() const
 {
 	glBindBuffer(GL_ARRAY_BUFFER, _vertexBufferId);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBufferId);

@@ -38,7 +38,7 @@ Renderer::Renderer(int width, int height)
 	Init(width, height);
 }
 
-void Renderer::Render(const std::vector<RenderObject&> &objects, GLFWwindow &window)
+void Renderer::Render(const std::vector<GameObject> &objects, GLFWwindow &window)
 {
 	glClear(GL_CLEAR);
 	// immediate mode for testing

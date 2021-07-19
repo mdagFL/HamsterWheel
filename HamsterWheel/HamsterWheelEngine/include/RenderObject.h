@@ -29,18 +29,20 @@ namespace HW
 		
 
 		RenderObject();
+		RenderObject(Material* material);
 		RenderObject(float* vertexBuffer, unsigned int* elementBuffer, VertexAttribParams& params, Material& material);
 		~RenderObject();
 		void Render() const override;
 
 	private:
+		void Init(Material* material);
 		float* _vertexBuffer;
 		unsigned int* _indexBuffer;
 		unsigned int _vertexBufferId;
 		unsigned int _indexBufferId;
 		int _mode;
 		
-		//Material& _material;
+		Material* _material;
 
 		VertexAttribParams _attribParams;
 	};

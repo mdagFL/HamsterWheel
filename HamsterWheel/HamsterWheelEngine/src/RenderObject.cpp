@@ -1,11 +1,25 @@
 #pragma once
 #include "RenderObject.h"
 
-HW::RenderObject::RenderObject() : HW::GameObject::GameObject()
+using namespace HW;
+
+RenderObject::RenderObject() : GameObject::GameObject()
 {
+	Init(new Material());
+
+}
+RenderObject::RenderObject(Material *material)
+{
+	Init(material);
+	
+}
+
+void RenderObject::Init(Material* material)
+{
+
 	// Create a simple quad as a default object
 	_attribParams = VertexAttribParams(0, 3, GL_FLOAT, false, 3 * sizeof(float), 0);
-	_vertexBuffer = new float[12] 
+	_vertexBuffer = new float[12]
 	{ -1.0f, 1.0f, 0.5f,
 	   1.0f, 1.0f, 0.5f,
 	   1.0f, -1.0f, 0.5f,
@@ -13,37 +27,43 @@ HW::RenderObject::RenderObject() : HW::GameObject::GameObject()
 	};
 	_indexBuffer = new unsigned int[4]{ 0, 1, 3, 2 };
 	_mode = GL_TRIANGLE_STRIP;
+	_material = material;
 
 	glGenBuffers(1, &_vertexBufferId);
 	glBindBuffer(GL_ARRAY_BUFFER, _vertexBufferId);
 	glBufferData(GL_ARRAY_BUFFER, 12 * sizeof(float), _vertexBuffer, GL_STATIC_DRAW);
+
+	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(_attribParams._Index, _attribParams._Components, _attribParams._Type, _attribParams._Normalized,
 		_attribParams._Stride, &_attribParams._Offset);
 
+	glGenBuffers(1, &_indexBufferId);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBufferId);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * 4, _indexBuffer, GL_STATIC_DRAW);
-
-	
-
 }
 
-HW::RenderObject::~RenderObject()
+
+RenderObject::~RenderObject()
 {
 	delete[] _vertexBuffer;
 	delete[] _indexBuffer;
-
+	delete _material; // probably should make this managed by the client..
 }
 
-HW::RenderObject::RenderObject(float* vertexBuffer, unsigned int* elementBuffer, VertexAttribParams &params, Material& material)
+
+/*
+RenderObject::RenderObject(float* vertexBuffer, unsigned int* elementBuffer, VertexAttribParams &params, Material &material)
 {
 	_vertexBuffer = vertexBuffer;
 	_indexBuffer = elementBuffer;
 	_attribParams = params;
+	_material = *material;
 	
 }
-
-void HW::RenderObject::Render() const
+*/
+void RenderObject::Render() const
 {
+	_material->_shaderProgram->SetActive();
 	glBindBuffer(GL_ARRAY_BUFFER, _vertexBufferId);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBufferId);
 

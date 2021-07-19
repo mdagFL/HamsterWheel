@@ -93,6 +93,11 @@ ShaderProgram::ShaderProgram(const char* path)
 	_id = CreateShaderProgram(vertexShader, fragmentShader);
 }
 
+ShaderProgram::~ShaderProgram()
+{
+
+}
+
 void ShaderProgram::SetActive()
 {
 	glUseProgram(_id);

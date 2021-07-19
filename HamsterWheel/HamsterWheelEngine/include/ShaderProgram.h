@@ -46,18 +46,17 @@ namespace HW
 		const static ShaderProgramSource SHADER_SOURCE_DEFAULT = {
 		// vertex shader
 		"#version 330 core\n"
-		"attribute vec4 position;\n"
-		"varying vec4 color;\n"
+		"in vec4 position;\n"
+		"out vec4 color;\n"
 		"void main()\n"
 		"{\n"
 		"	gl_Position = position;\n"
-		"	color = vec4(1.0, 0.0, 0.0, 1.0)\n"
+		"	color = vec4(1.0, 0.0, 0.0, 1.0);\n"
 
-		"}; ",
+		"} ",
 		// fragment shader
 		"	#version 330 core\n"
-		"	varying vec4 color;\n"
-
+		"in vec4 color;\n"
 		"void main()\n"
 		"{\n"
 		"	gl_FragColor = color;\n"

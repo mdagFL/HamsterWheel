@@ -27,7 +27,7 @@ namespace HW
 		
 		// TESTING //
 		RenderObject* o = new RenderObject();
-		_gameObjects.push_back(*o);
+		_gameObjects.push_back(o);
 
 	}
 
@@ -48,7 +48,7 @@ namespace HW
 		while (!glfwWindowShouldClose(_window))
 		{
 
-			_Renderer->Render(_gameObjects, *_window);
+			_Renderer->Render(_gameObjects, _window);
 
 			OnRender();
 

@@ -18,7 +18,7 @@ namespace HW
 	public:		
 		
 		void Init(int width, int height);
-		void Render(const std::vector<GameObject> &objects, GLFWwindow &window);
+		void Render(const std::vector<GameObject*> &objects, GLFWwindow* window);
 		Renderer();
 		Renderer(int width, int height);
 		~Renderer();

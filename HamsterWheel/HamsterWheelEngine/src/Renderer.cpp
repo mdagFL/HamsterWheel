@@ -38,9 +38,9 @@ Renderer::Renderer(int width, int height)
 	Init(width, height);
 }
 
-void Renderer::Render(const std::vector<GameObject> &objects, GLFWwindow &window)
+void Renderer::Render(const std::vector<GameObject*> &objects, GLFWwindow* window)
 {
-	glClear(GL_CLEAR);
+	glClear(GL_COLOR_BUFFER_BIT);
 	// immediate mode for testing
 	//glBegin(GL_TRIANGLES);
 	//glVertex3f(-0.5f, 0.5f, 0.5f);
@@ -49,9 +49,9 @@ void Renderer::Render(const std::vector<GameObject> &objects, GLFWwindow &window
 	//glEnd();
 	
 	for (int i = 0; i < objects.size(); i++)
-		objects[i].Render();
+		 objects[i]->Render();
 
-	glfwSwapBuffers(&window);
+	//glfwSwapBuffers(window);
 }
 
 Renderer::~Renderer()
@@ -82,6 +82,7 @@ void Renderer::Init(int width, int height)
 	glViewport(0, 0, width, height);
 	
 	// create 1 VAO to be used by all render objects
+	
 	glGenVertexArrays(1, &_vaoId);
 	glBindVertexArray(_vaoId);
 

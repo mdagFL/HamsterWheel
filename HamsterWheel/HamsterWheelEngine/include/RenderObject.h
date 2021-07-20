@@ -9,10 +9,10 @@ struct VertexAttribParams
 	int _Index;
 	int _Stride;
 	int _Components;
-	bool _Normalized;
+	int _Normalized;
 	int _Type;
 	int _Offset;
-	VertexAttribParams(int index, int components, int type, bool normalized, int stride, int offset)
+	VertexAttribParams(int index, int components, int type, int normalized, int stride, int offset)
 		: _Index{ index }, _Stride{ stride }, _Components{ components }, _Normalized{ normalized },
 		_Type{ type }, _Offset{ offset } {}	
 	

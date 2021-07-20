@@ -27,7 +27,7 @@ namespace HW
 		
 		ShaderProgramSource ReadShaderFile(const char* path);
 		unsigned int CompileShader(const std::string& source, ShaderType type);
-		unsigned int CreateShaderProgram(const unsigned int veretxShader, const unsigned int fragmentShader);
+		unsigned int CreateShaderProgram(const std::string& veretxShader, const std::string& fragmentShader);
 		ShaderProgram(const char* path);
 		void SetActive();
 		void PassUniform(const char* name, const float value);
@@ -37,7 +37,7 @@ namespace HW
 
 	private:
 		unsigned int _id;
-		void Init();
+		void Init(const char* path);
 		
 	};
 
@@ -46,7 +46,7 @@ namespace HW
 		const static ShaderProgramSource SHADER_SOURCE_DEFAULT = {
 		// vertex shader
 		"#version 330 core\n"
-		"in vec4 position;\n"
+		"layout(location = 0) in vec4 position;\n"
 		"out vec4 color;\n"
 		"void main()\n"
 		"{\n"
@@ -55,7 +55,7 @@ namespace HW
 
 		"} ",
 		// fragment shader
-		"	#version 330 core\n"
+		"#version 330 core\n"
 		"in vec4 color;\n"
 		"void main()\n"
 		"{\n"

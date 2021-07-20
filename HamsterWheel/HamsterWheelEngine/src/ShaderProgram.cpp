@@ -27,9 +27,13 @@ unsigned int ShaderProgram::CompileShader(const std::string& shader, ShaderType 
 
 }
 
-unsigned int ShaderProgram::CreateShaderProgram(const unsigned int vertexId, const unsigned int fragmentId)
+unsigned int ShaderProgram::CreateShaderProgram(const std::string& vertex, const std::string& fragment)
 {
 	unsigned int program = glCreateProgram();
+
+	unsigned int vertexId = CompileShader(vertex, ShaderType::VERTEX);
+	unsigned int fragmentId = CompileShader(fragment, ShaderType::FRAGMENT);
+	
 	glAttachShader(program, vertexId);
 	glAttachShader(program, fragmentId);
 	glLinkProgram(program);
@@ -80,17 +84,23 @@ ShaderProgramSource ShaderProgram::ReadShaderFile(const char* path)
 
 ShaderProgram::ShaderProgram()
 {
-	unsigned int vertexShader = CompileShader(SHADER_SOURCE_DEFAULT.VertexShader, ShaderType::VERTEX);
-	unsigned int fragmentShader = CompileShader(SHADER_SOURCE_DEFAULT.FragmentShader, ShaderType::FRAGMENT);
-	_id = CreateShaderProgram(vertexShader, fragmentShader);
+	Init(nullptr);
 }
 
 ShaderProgram::ShaderProgram(const char* path)
 {
-	ShaderProgramSource source = ReadShaderFile(path);
-	unsigned int vertexShader = CompileShader(source.VertexShader, ShaderType::VERTEX);
-	unsigned int fragmentShader = CompileShader(source.FragmentShader, ShaderType::FRAGMENT);
-	_id = CreateShaderProgram(vertexShader, fragmentShader);
+	Init(path);
+}
+
+void ShaderProgram::Init(const char* path)
+{
+	if (path == nullptr)
+		_id = CreateShaderProgram(SHADER_SOURCE_DEFAULT.VertexShader, SHADER_SOURCE_DEFAULT.FragmentShader);
+	else
+	{
+		ShaderProgramSource source = ReadShaderFile(path);
+		_id = CreateShaderProgram(source.VertexShader, source.FragmentShader);
+	}
 }
 
 ShaderProgram::~ShaderProgram()

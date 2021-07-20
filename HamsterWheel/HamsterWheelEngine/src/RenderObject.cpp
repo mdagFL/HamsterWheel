@@ -18,28 +18,38 @@ void RenderObject::Init(Material* material)
 {
 
 	// Create a simple quad as a default object
-	_attribParams = VertexAttribParams(0, 3, GL_FLOAT, false, 3 * sizeof(float), 0);
+	_attribParams = VertexAttribParams(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), 0);
+	/*
 	_vertexBuffer = new float[12]
-	{ -1.0f, 1.0f, 0.5f,
-	   1.0f, 1.0f, 0.5f,
-	   1.0f, -1.0f, 0.5f,
-	  -1.0f, -1.0f, 0.5f,
+	{ -0.5f, 0.5f, 1.5f,
+	   0.5f, 0.5f, 1.5f,
+	   0.5f, -0.5f, 1.5f,
+	  -0.5f, -0.5f, 1.5f,
 	};
-	_indexBuffer = new unsigned int[4]{ 0, 1, 3, 2 };
+	*/
+
+	_vertexBuffer = new float[12] {
+	-0.9f, -0.9f, 0.5f,
+	-0.9F, 0.9F, 0.5f,
+	0.9f, -0.9f, 0.5f,
+	0.9F, 0.9F, 0.5f
+	};
+
+	_indexBuffer = new unsigned int[4]{ 0, 1, 2, 3 };
 	_mode = GL_TRIANGLE_STRIP;
 	_material = material;
 
 	glGenBuffers(1, &_vertexBufferId);
 	glBindBuffer(GL_ARRAY_BUFFER, _vertexBufferId);
-	glBufferData(GL_ARRAY_BUFFER, 12 * sizeof(float), _vertexBuffer, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, 12 * sizeof(GLfloat), _vertexBuffer, GL_STATIC_DRAW);
 
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(_attribParams._Index, _attribParams._Components, _attribParams._Type, _attribParams._Normalized,
-		_attribParams._Stride, &_attribParams._Offset);
+		_attribParams._Stride, 0);
 
 	glGenBuffers(1, &_indexBufferId);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBufferId);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * 4, _indexBuffer, GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * 4, _indexBuffer, GL_STATIC_DRAW);
 }
 
 
@@ -67,6 +77,6 @@ void RenderObject::Render() const
 	glBindBuffer(GL_ARRAY_BUFFER, _vertexBufferId);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBufferId);
 
-	glDrawElements(_mode, 4, GL_UNSIGNED_INT, _indexBuffer);
+	glDrawElements(_mode, 4, GL_UNSIGNED_INT, nullptr);
 }
 

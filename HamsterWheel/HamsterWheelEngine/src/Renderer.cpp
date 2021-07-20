@@ -51,7 +51,7 @@ void Renderer::Render(const std::vector<GameObject*> &objects, GLFWwindow* windo
 	for (int i = 0; i < objects.size(); i++)
 		 objects[i]->Render();
 
-	//glfwSwapBuffers(window);
+	glfwSwapBuffers(window);
 }
 
 Renderer::~Renderer()

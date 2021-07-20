@@ -19,23 +19,15 @@ void RenderObject::Init(Material* material)
 
 	// Create a simple quad as a default object
 	_attribParams = VertexAttribParams(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), 0);
-	/*
+
 	_vertexBuffer = new float[12]
-	{ -0.5f, 0.5f, 1.5f,
-	   0.5f, 0.5f, 1.5f,
-	   0.5f, -0.5f, 1.5f,
-	  -0.5f, -0.5f, 1.5f,
-	};
-	*/
-
-	_vertexBuffer = new float[12] {
-	-0.9f, -0.9f, 0.5f,
-	-0.9F, 0.9F, 0.5f,
-	0.9f, -0.9f, 0.5f,
-	0.9F, 0.9F, 0.5f
+	{ -0.5f, 0.5f, 0.5f,
+	   0.5f, 0.5f, 0.5f,
+	   0.5f, -0.5f, 0.5f,
+	  -0.5f, -0.5f, 0.5f,
 	};
 
-	_indexBuffer = new unsigned int[4]{ 0, 1, 2, 3 };
+	_indexBuffer = new unsigned int[4]{ 0, 1, 3, 2 };
 	_mode = GL_TRIANGLE_STRIP;
 	_material = material;
 

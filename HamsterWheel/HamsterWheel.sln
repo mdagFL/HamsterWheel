@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HamsterWheelEngine", "Hamst
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ClientExample", "ClientExample\ClientExample.vcxproj", "{1EE61AB9-F181-45CD-A5C3-010C2F9DA5AC}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glfw", "..\..\glfw\bin\src\glfw.vcxproj", "{003C85D0-9F8A-37DB-A222-2EBF7FC0F1AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{1EE61AB9-F181-45CD-A5C3-010C2F9DA5AC}.Release|x64.Build.0 = Release|x64
 		{1EE61AB9-F181-45CD-A5C3-010C2F9DA5AC}.RelWithDebInfo|x64.ActiveCfg = Release|x64
 		{1EE61AB9-F181-45CD-A5C3-010C2F9DA5AC}.RelWithDebInfo|x64.Build.0 = Release|x64
+		{003C85D0-9F8A-37DB-A222-2EBF7FC0F1AD}.Debug|x64.ActiveCfg = Debug|x64
+		{003C85D0-9F8A-37DB-A222-2EBF7FC0F1AD}.Debug|x64.Build.0 = Debug|x64
+		{003C85D0-9F8A-37DB-A222-2EBF7FC0F1AD}.MinSizeRel|x64.ActiveCfg = MinSizeRel|x64
+		{003C85D0-9F8A-37DB-A222-2EBF7FC0F1AD}.MinSizeRel|x64.Build.0 = MinSizeRel|x64
+		{003C85D0-9F8A-37DB-A222-2EBF7FC0F1AD}.Release|x64.ActiveCfg = Release|x64
+		{003C85D0-9F8A-37DB-A222-2EBF7FC0F1AD}.Release|x64.Build.0 = Release|x64
+		{003C85D0-9F8A-37DB-A222-2EBF7FC0F1AD}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
+		{003C85D0-9F8A-37DB-A222-2EBF7FC0F1AD}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

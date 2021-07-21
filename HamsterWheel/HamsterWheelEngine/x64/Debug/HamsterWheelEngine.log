@@ -1,2 +1,7 @@
-﻿  RenderObject.cpp
+﻿  Application.cpp
+  RenderObject.cpp
+  Renderer.cpp
+  Generating Code...
+Renderer.obj : warning LNK4006: aTest already defined in RenderObject.obj; second definition ignored
+Application.obj : warning LNK4006: aTest already defined in RenderObject.obj; second definition ignored
   HamsterWheelEngine.vcxproj -> C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\Debug\HamsterWheelEngine.lib

@@ -30,6 +30,7 @@
     <ClInclude Include="include\Application.h" />
     <ClInclude Include="include\EntryPoint.h" />
     <ClInclude Include="include\GameObject.h" />
+    <ClInclude Include="include\Mat4.h" />
     <ClInclude Include="include\Material.h" />
     <ClInclude Include="include\Renderer.h" />
     <ClInclude Include="include\RenderObject.h" />

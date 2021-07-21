@@ -42,6 +42,9 @@
     <ClInclude Include="include\Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Mat4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp">

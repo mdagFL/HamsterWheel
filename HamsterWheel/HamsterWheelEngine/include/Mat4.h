@@ -34,22 +34,10 @@ namespace HW
 			float x20, float x21, float x22, float x23,
 			float x30, float x31, float x32, float x33)
 		{
-			_Matrix[0] = x00;
-			_Matrix[1] = x01;
-			_Matrix[2] = x02;
-			_Matrix[3] = x03;
-			_Matrix[4] = x10;
-			_Matrix[5] = x11;
-			_Matrix[6] = x12;
-			_Matrix[7] = x13;
-			_Matrix[8] = x20;
-			_Matrix[9] = x21;
-			_Matrix[10] = x22;
-			_Matrix[11] = x23;
-			_Matrix[12] = x30;
-			_Matrix[13] = x31;
-			_Matrix[14] = x32;
-			_Matrix[15] = x33;
+			_Matrix[0]  = x00;  _Matrix[1]  = x01; _Matrix[2]  = x02; _Matrix[3]  = x03;
+			_Matrix[4]  = x10;  _Matrix[5]  = x11; _Matrix[6]  = x12; _Matrix[7]  = x13;
+			_Matrix[8]  = x20;  _Matrix[9]  = x21; _Matrix[10] = x22; _Matrix[11] = x23;
+			_Matrix[12] = x30;  _Matrix[13] = x31; _Matrix[14] = x32; _Matrix[15] = x33;
 		}
 
 		Mat4(float matrix[16])
@@ -72,9 +60,18 @@ namespace HW
 		}
 		*/
 
-		void Transpose()
+		Mat4 Transpose()
 		{
-
+			Mat4 result;
+			for (int i = 0; i < 4; i++)
+			{
+				for (int j = 0; j < 4; j++)
+				{
+					// For each column, write the corresponding row
+					result[i * 4 + j] = _Matrix[j * 4 + i];
+				}
+			}
+			return result;
 		}
 
 		float& operator[](int index)
@@ -94,6 +91,7 @@ namespace HW
 			{
 				for (int j = 0; j < 4; j++)
 				{
+					// dot product of rows and columns for each cell
 					float sum = 0;
 					for (int k = 0; k < 4; k++)
 					{
@@ -105,7 +103,7 @@ namespace HW
 			return product;
 		}
 
-		Mat4& operator*(float scalar) const
+		Mat4 operator*(float scalar) const
 		{
 			Mat4 product;
 			for (int i = 0; i < 16; i++)

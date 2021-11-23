@@ -108,20 +108,20 @@ ShaderProgram::~ShaderProgram()
 
 }
 
-void ShaderProgram::SetActive()
+void ShaderProgram::SetActive() const
 {
 	glUseProgram(_id);
 }
 
-void ShaderProgram::PassUniform(const char* name, const float value)
+void ShaderProgram::PassUniform(const std::string& name, const float value)
 {
-	int location = glGetUniformLocation(_id, name);
+	int location = glGetUniformLocation(_id, name.c_str());
 	glUniform1f(location, value);
 }
 
-void ShaderProgram::PassUniform(const char* name, const Vector3 value)
+void ShaderProgram::PassUniform(const std::string& name, const Vector3& value)
 {
-	int location = glGetUniformLocation(_id, name);
+	int location = glGetUniformLocation(_id, name.c_str());
 	glUniform3fv(location, 1, (float*)(&value));
 
 }

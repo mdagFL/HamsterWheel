@@ -45,20 +45,7 @@ namespace HW
 			std::memcpy(_Matrix, matrix, sizeof(float) * 16);
 		}
 
-		/*
-		Mat4(const Mat4& old)
-		{
-			std::cout << "copy!" << std::endl;
-			std::memcpy(_Matrix, old._Matrix, sizeof(float) * 16);
-		}
-		*/
-		/*
-		Mat4(const Mat4&& old)
-		{
-			std::cout << "move!" << std::endl;
-			//std::memmove(_Matrix, old._Matrix, sizeof(float) * 16);
-		}
-		*/
+
 
 		Mat4 Transpose()
 		{
@@ -67,7 +54,7 @@ namespace HW
 			{
 				for (int j = 0; j < 4; j++)
 				{
-					// For each column, write the corresponding row
+					// For each column, copy the corresponding row
 					result[i * 4 + j] = _Matrix[j * 4 + i];
 				}
 			}
@@ -115,8 +102,10 @@ namespace HW
 
 		Mat4& operator=(const Mat4& rhs)
 		{
+			// Check self assignment
 			if (this == &rhs)
 				return *this;
+
 			memcpy(_Matrix, rhs._Matrix, sizeof(float)*16);
 			return *this;
 		}

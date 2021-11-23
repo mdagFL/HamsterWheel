@@ -10,9 +10,10 @@ namespace HW
 	class Material
 	{
 	public:
-		ShaderProgram* _shaderProgram;
-		Texture* _texture;
-		Material(ShaderProgram& shader, char* texture) {}
+		const ShaderProgram* _shaderProgram;
+		const Texture* _texture;
+		Material(const ShaderProgram* shaderProgram, const Texture* texture)
+			: _shaderProgram{ shaderProgram }, _texture{ texture } {}
 		Material();
 		~Material();
 	};

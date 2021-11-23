@@ -1,11 +1,17 @@
 #pragma once
+
+#include <string>
+#include <iostream>
+
 namespace HW
 {
 	class Texture
 	{
 	public:
+		Texture(std::string path);
+		~Texture();
 	private:
-		char* _texture;
-		unsigned int _id;
+		unsigned char* _textureBytes;
+		unsigned int _id{};
 	};
 }

@@ -81,7 +81,7 @@ void Renderer::Init(int width, int height)
 	glClearColor(0, 0, 0, 1);
 	glViewport(0, 0, width, height);
 	
-	// create 1 VAO to be used by all render objects
+	// create 1 VAO to be used by all render objects (?)
 	
 	glGenVertexArrays(1, &_vaoId);
 	glBindVertexArray(_vaoId);

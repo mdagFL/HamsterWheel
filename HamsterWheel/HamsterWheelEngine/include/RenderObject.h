@@ -30,7 +30,7 @@ namespace HW
 
 		RenderObject();
 		RenderObject(Material* material);
-		RenderObject(float* vertexBuffer, unsigned int* elementBuffer, VertexAttribParams& params, Material& material);
+		RenderObject(float* vertexBuffer, unsigned int* elementBuffer, VertexAttribParams& params, Material* material);
 		~RenderObject();
 		void Render() const override;
 

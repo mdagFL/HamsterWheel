@@ -8,7 +8,7 @@ RenderObject::RenderObject() : GameObject::GameObject()
 	Init(new Material());
 
 }
-RenderObject::RenderObject(Material *material)
+RenderObject::RenderObject(Material* material)
 {
 	Init(material);
 	

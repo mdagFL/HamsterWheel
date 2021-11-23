@@ -10,7 +10,7 @@ namespace HW
 		
 		GameObject();
 		~GameObject();
-		Transform _Transform;
+		Transform _Transform{};
 		virtual void Render() const {} // empty virtual? it's ok??
 	private:
 

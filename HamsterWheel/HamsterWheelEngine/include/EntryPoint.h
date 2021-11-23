@@ -1,8 +1,12 @@
 #pragma once
 
-#include "glew.h"
-#define GLEW_STATIC
 #include <iostream>
+#include "glew.h"
+
+#define GLEW_STATIC
+#define STB_IMAGE_IMPLEMENTATION
+
+#include "stb_image.h"
 #include "Application.h"
 #include "Renderer.h"
 #include "Mat4.h"
@@ -11,11 +15,10 @@ extern HW::Application* HW::CreateApplication();
 
 int main()
 {
-    
 	HW::Application* app = HW::CreateApplication();
 
-	//app->Run();
-	
+	app->Run();
+
 	//HW::Vector3 vec3(2, 3, 5);
 	HW::Mat4 matrix1 = HW::Mat4(
 		1, 1, 1, 1,

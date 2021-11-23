@@ -29,9 +29,11 @@ namespace HW
 		unsigned int CompileShader(const std::string& source, ShaderType type);
 		unsigned int CreateShaderProgram(const std::string& veretxShader, const std::string& fragmentShader);
 		ShaderProgram(const char* path);
-		void SetActive();
-		void PassUniform(const char* name, const float value);
-		void PassUniform(const char* name, const Vector3 value);
+
+		void SetActive() const;
+
+		void PassUniform(const std::string& name, const float value);
+		void PassUniform(const std::string& name, const Vector3& value);
 		ShaderProgram();
 		~ShaderProgram();
 

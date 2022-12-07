@@ -7,7 +7,7 @@ High Level View
 Two main layers:
 
 
-Core Layer - Handles game objects, rendering, probably audio
+Core Layer - Handles game objects, rendering, probably audio later
 
 RPG Layer - Abstraction above the core layer for RPG fundamentals
 
@@ -15,12 +15,15 @@ RPG Layer - Abstraction above the core layer for RPG fundamentals
 
 Core Layer Components:
 
+Transform -> contains positional and size information of an object.
 
-GameObject -> Contains vertices, material, other general properties/behaviors
+GameObject -> Contains transform
+
+RenderObject -> Inherits from GameObject and contains vertices, material, other general properties/behaviors
 
 Material -> Contains texture and shader
 
-PersistentObject -> Serializable object
+PersistentObject -> Represents a serializable object that can be written to and pulled from the disk
 
 ---------------------------------------------
 

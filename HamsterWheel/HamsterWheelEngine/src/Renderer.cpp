@@ -77,14 +77,14 @@ void Renderer::Init(int width, int height)
 		&unusedIds,
 		true);
 
-	
 	glClearColor(0, 0, 0, 1);
 	glViewport(0, 0, width, height);
 	
 	// create 1 VAO to be used by all render objects (?)
+	// this is certainly not right
 	
-	glGenVertexArrays(1, &_vaoId);
-	glBindVertexArray(_vaoId);
+	// glGenVertexArrays(1, &_vaoId);
+	// glBindVertexArray(_vaoId);
 
 	// enable core profile?
 

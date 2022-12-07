@@ -12,9 +12,11 @@ namespace HW
 	public:
 		const ShaderProgram* _shaderProgram;
 		const Texture* _texture;
+		Material();
 		Material(const ShaderProgram* shaderProgram, const Texture* texture)
 			: _shaderProgram{ shaderProgram }, _texture{ texture } {}
-		Material();
+		Material(const Texture* texture) // TODO: Actual memory management
+			: _shaderProgram{ new ShaderProgram() }, _texture{ texture } {}
 		~Material();
 	};
 }

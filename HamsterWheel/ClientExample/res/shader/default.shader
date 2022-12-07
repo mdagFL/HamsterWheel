@@ -3,6 +3,7 @@
 
 layout(location = 0) in vec4 position;
 out vec4 color;
+out vec2 texCoord;
 
 uniform vec2 res;
 
@@ -26,6 +27,7 @@ void main()
 
 	gl_Position = position;
 	color = vec4(1.0, 0.0, 0.0, 1.0);
+	texCoord = vec2(0, 0);
 
 };
 
@@ -33,9 +35,12 @@ void main()
 #version 330 core
 
 in vec4 color;
+in vec2 texCoord;
+
+uniform sampler2D tex;
 
 void main()
 {
-	gl_FragColor = color;
+	gl_FragColor = texture(tex, texCoord);
 
 };

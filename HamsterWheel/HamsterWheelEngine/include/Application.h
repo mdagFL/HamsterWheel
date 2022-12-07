@@ -16,13 +16,13 @@ namespace HW
 		
 		Renderer* _Renderer;
 		void Render();
-		virtual void OnRender() const;
+		virtual void OnRender();
 		void Update();
-		virtual void OnUpdate() const;
+		virtual void OnUpdate();
 		void Init();
 		void Run();
 		void ResizeWindow(int width, int height);
-		void AddGameObject(GameObject object);
+		void AddGameObject(GameObject* object);
 		
 		Application(int width, int height);
 		~Application();

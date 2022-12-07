@@ -5,6 +5,7 @@ using namespace HW;
 
 RenderObject::RenderObject() : GameObject::GameObject()
 {
+	_vertexBufferId = 0;
 	Init(new Material());
 
 }
@@ -16,7 +17,6 @@ RenderObject::RenderObject(Material* material)
 
 void RenderObject::Init(Material* material)
 {
-
 	// Create a simple quad as a default object
 	_attribParams = VertexAttribParams(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), 0);
 
@@ -31,6 +31,9 @@ void RenderObject::Init(Material* material)
 	_mode = GL_TRIANGLE_STRIP;
 	_material = material;
 
+	GLint size;
+	//glGetBufferParameteriv(GL_ELEMENT_ARRAY_BUFFER, GL_BUFFER_SIZE, &size);
+	//printf("ELEMENT_ARRAY_BUFFER SIZE: %d\n", size);
 	glGenBuffers(1, &_vertexBufferId);
 	glBindBuffer(GL_ARRAY_BUFFER, _vertexBufferId);
 	glBufferData(GL_ARRAY_BUFFER, 12 * sizeof(GLfloat), _vertexBuffer, GL_STATIC_DRAW);
@@ -69,6 +72,9 @@ void RenderObject::Render() const
 	glBindBuffer(GL_ARRAY_BUFFER, _vertexBufferId);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBufferId);
 
+	
+	
+	// Draw the object
 	glDrawElements(_mode, 4, GL_UNSIGNED_INT, nullptr);
 }
 

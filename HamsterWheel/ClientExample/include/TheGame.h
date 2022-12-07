@@ -5,7 +5,7 @@
 class TheGame : public HW::Application
 {
 public:
-	void OnUpdate() const override;
-	void OnRender() const override;
+	void OnUpdate() override;
+	void OnRender() override;
 	TheGame(int width, int height);
 };

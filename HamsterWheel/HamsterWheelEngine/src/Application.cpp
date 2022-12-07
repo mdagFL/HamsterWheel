@@ -25,9 +25,14 @@ namespace HW
 
 		_Renderer = new Renderer(_width, _height);
 		
-		// TESTING //
-		RenderObject* o = new RenderObject();
-		_gameObjects.push_back(o);
+		/// <summary>
+		// TESTING
+		/// </summary>
+		ShaderProgram* defaultShader = new ShaderProgram();
+		Texture* testTexture = new Texture("D:\\Randy's_Disk\\Pictures_D\\ahamam2.png");
+		Material* testMaterial = new Material(defaultShader, testTexture);
+		RenderObject* o = new RenderObject(testMaterial);
+		this->AddGameObject(o);
 
 	}
 
@@ -35,33 +40,34 @@ namespace HW
 	{
 		_width = width;
 		_height = height;
-		Init();
 	}
 
-	void HW::Application::OnRender() const
+	void HW::Application::OnRender()
 	{
 		std::cout << "base render" << std::endl;
 	}
 
 	void HW::Application::Run()
 	{
+		Init();
 		while (!glfwWindowShouldClose(_window))
 		{
 
 			_Renderer->Render(_gameObjects, _window);
 
-			OnRender();
+			//OnRender();
+			//OnUpdate();
 
 			glfwPollEvents();
 		}
 	}
 
-	void HW::Application::AddGameObject(GameObject object)
+	void HW::Application::AddGameObject(GameObject* object)
 	{
-		
+		_gameObjects.push_back(object);
 	}
 
-	void HW::Application::OnUpdate() const
+	void HW::Application::OnUpdate()
 	{
 
 	}

@@ -4,9 +4,7 @@
 #include "glew.h"
 
 #define GLEW_STATIC
-#define STB_IMAGE_IMPLEMENTATION
 
-#include "stb_image.h"
 #include "Application.h"
 #include "Renderer.h"
 #include "Mat4.h"

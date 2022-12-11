@@ -24,15 +24,7 @@ namespace HW
 		glfwMakeContextCurrent(_window);
 
 		_Renderer = new Renderer(_width, _height);
-		
-		/// <summary>
-		// TESTING
-		/// </summary>
-		ShaderProgram* defaultShader = new ShaderProgram();
-		Texture* testTexture = new Texture("D:\\Randy's_Disk\\Pictures_D\\ahamam2.png");
-		Material* testMaterial = new Material(defaultShader, testTexture);
-		RenderObject* o = new RenderObject(testMaterial);
-		this->AddGameObject(o);
+
 
 	}
 
@@ -52,12 +44,9 @@ namespace HW
 		Init();
 		while (!glfwWindowShouldClose(_window))
 		{
-
+			OnUpdate();
 			_Renderer->Render(_gameObjects, _window);
-
-			//OnRender();
-			//OnUpdate();
-
+			OnRender();
 			glfwPollEvents();
 		}
 	}

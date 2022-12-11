@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Application.h"
 
 class TheGame : public HW::Application

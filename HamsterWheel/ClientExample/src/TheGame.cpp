@@ -17,11 +17,15 @@ void TheGame::OnRender()
 void TheGame::OnUpdate()
 {
 	static bool init = false;
-	std::cout << "game update" << std::endl;
+	//std::cout << "game update" << std::endl;
 	if (!init)
 	{
 		using namespace HW;
-		
+		ShaderProgram* defaultShader = new ShaderProgram("C:\\dev\\git\\HamsterWheel\\HamsterWheel\\ClientExample\\Debug\\default.shader");
+		Texture* testTexture = new Texture("D:\\Randy's_Disk\\Pictures_D\\ahamam2.png");
+		Material* testMaterial = new Material(defaultShader, testTexture);
+		RenderObject* o = new RenderObject(testMaterial);
+		this->AddGameObject(o);
 		init = true;
 	}
 

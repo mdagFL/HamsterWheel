@@ -72,9 +72,9 @@ ShaderProgramSource ShaderProgram::ReadShaderFile(const char* path)
 			lineType = ShaderType::FRAGMENT;
 		else
 			if (lineType == ShaderType::FRAGMENT)
-				source.FragmentShader.append(line);
+				source.FragmentShader.append(line + "\n");
 			else if (lineType == ShaderType::VERTEX)
-				source.VertexShader.append(line);
+				source.VertexShader.append(line + "\n");
 	}
 
 	inFile.close();

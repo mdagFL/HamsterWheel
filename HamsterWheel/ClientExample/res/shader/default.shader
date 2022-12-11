@@ -23,7 +23,7 @@ void main()
 		0, 1, 0, pos.y,
 		0, 0, 1, pos.z,
 		0, 0, 0, 1
-	)
+	);
 
 	gl_Position = position;
 	color = vec4(1.0, 0.0, 0.0, 1.0);

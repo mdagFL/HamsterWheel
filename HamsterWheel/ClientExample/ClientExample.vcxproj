@@ -92,15 +92,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)HamsterWheelEngine\include;.\include;$(SolutionDir)\HamsterWheelEngine\vendor\GLFW\include;$(SolutionDir)HamsterWheelEngine\include;.\include;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\include</AdditionalIncludeDirectories>
       <DisableLanguageExtensions>true</DisableLanguageExtensions>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(SolutionDir)HamsterWheelEngine\vendor\GLFW\include;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\include;$(SolutionDir)HamsterWheelEngine\include;$(SolutionDir)HamsterWheelEngine\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
-      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\lib\glew32s.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLFW\lib-vc2019\glfw3.lib</AdditionalDependencies>
+      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;$(SolutionDir)HamsterWheelEngine\Debug\HamsterWheelEngine.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\lib\glew32s.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLFW\lib-vc2019\glfw3.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -111,8 +111,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\HamsterWheelEngine\include;.\include</AdditionalIncludeDirectories>
       <DisableLanguageExtensions>true</DisableLanguageExtensions>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(SolutionDir)HamsterWheelEngine\vendor\GLFW\include;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\include;$(SolutionDir)HamsterWheelEngine\include;$(SolutionDir)HamsterWheelEngine\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -121,7 +121,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
-      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;</AdditionalDependencies>
+      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;$(SolutionDir)HamsterWheelEngine\Debug\HamsterWheelEngine.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\lib\glew32s.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLFW\lib-vc2019\glfw3.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -130,15 +130,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)HamsterWheelEngine\include;.\include;$(SolutionDir)\HamsterWheelEngine\vendor\GLFW\include;$(SolutionDir)HamsterWheelEngine\include;.\include;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\include</AdditionalIncludeDirectories>
       <DisableLanguageExtensions>true</DisableLanguageExtensions>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(SolutionDir)HamsterWheelEngine\vendor\GLFW\include;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\include;$(SolutionDir)HamsterWheelEngine\include;$(SolutionDir)HamsterWheelEngine\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
-      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\lib\glew32s.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLFW\lib-vc2019\glfw3.lib</AdditionalDependencies>
+      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;$(SolutionDir)HamsterWheelEngine\Debug\HamsterWheelEngine.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\lib\glew32s.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLFW\lib-vc2019\glfw3.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -149,8 +149,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\HamsterWheelEngine\include;.\include</AdditionalIncludeDirectories>
       <DisableLanguageExtensions>true</DisableLanguageExtensions>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;$(SolutionDir)HamsterWheelEngine\vendor\GLFW\include;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\include;$(SolutionDir)HamsterWheelEngine\include;$(SolutionDir)HamsterWheelEngine\vendor\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -159,22 +159,33 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
-      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;</AdditionalDependencies>
+      <AdditionalDependencies>MSVCRTD.lib;shell32.lib;Gdi32.lib;opengl32.lib;kernel32.lib;user32.lib;$(SolutionDir)HamsterWheelEngine\Debug\HamsterWheelEngine.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLEW\lib\glew32s.lib;$(SolutionDir)HamsterWheelEngine\vendor\GLFW\lib-vc2019\glfw3.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\TheGame.h" />
+    <ClInclude Include="vendor\hw\include\Application.h" />
+    <ClInclude Include="vendor\hw\include\EntryPoint.h" />
+    <ClInclude Include="vendor\hw\include\GameObject.h" />
+    <ClInclude Include="vendor\hw\include\Mat4.h" />
+    <ClInclude Include="vendor\hw\include\Material.h" />
+    <ClInclude Include="vendor\hw\include\Renderer.h" />
+    <ClInclude Include="vendor\hw\include\RenderObject.h" />
+    <ClInclude Include="vendor\hw\include\ShaderProgram.h" />
+    <ClInclude Include="vendor\hw\include\Texture.h" />
+    <ClInclude Include="vendor\hw\include\Transform.h" />
+    <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\TheGame.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="res\shader\default.shader" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\HamsterWheelEngine\HamsterWheelEngine.vcxproj">
       <Project>{6dd5b0ce-f04e-410a-99af-cda3308767bf}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="res\shader\default.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

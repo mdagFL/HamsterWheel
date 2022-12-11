@@ -1,2 +1,12 @@
 ﻿  Application.cpp
+  Renderer.cpp
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\src\Renderer.cpp(7,133): warning C4100: 'userParam': unreferenced formal parameter
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\src\Renderer.cpp(7,90): warning C4100: 'length': unreferenced formal parameter
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\src\Renderer.cpp(7,61): warning C4100: 'id': unreferenced formal parameter
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\src\Renderer.cpp(7,48): warning C4100: 'type': unreferenced formal parameter
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\src\Renderer.cpp(7,33): warning C4100: 'source': unreferenced formal parameter
+  RenderObject.cpp
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\src\RenderObject.cpp(42,107): warning C4244: 'argument': conversion from 'int' to 'GLboolean', possible loss of data
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\src\RenderObject.cpp(34,8): warning C4101: 'size': unreferenced local variable
+  Generating Code...
   HamsterWheelEngine.vcxproj -> C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\Debug\HamsterWheelEngine.lib

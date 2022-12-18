@@ -21,7 +21,7 @@ void TheGame::OnUpdate()
 	if (!init)
 	{
 		using namespace HW;
-		ShaderProgram* defaultShader = new ShaderProgram("C:\\dev\\git\\HamsterWheel\\HamsterWheel\\ClientExample\\Debug\\default.shader");
+		ShaderProgram* defaultShader = new ShaderProgram("C:\\dev\\git\\HamsterWheel\\HamsterWheel\\ClientExample\\res\\shader\\default.shader");
 		Texture* testTexture = new Texture("D:\\Randy's_Disk\\Pictures_D\\ahamam2.png");
 		Material* testMaterial = new Material(defaultShader, testTexture);
 		RenderObject* o = new RenderObject(testMaterial);

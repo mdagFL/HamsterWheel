@@ -40,6 +40,8 @@ namespace HW
 		unsigned int* _indexBuffer;
 		unsigned int _vertexBufferId;
 		unsigned int _indexBufferId;
+		unsigned int _nVerts;
+		unsigned int _nPositionComponents;
 		int _mode;
 		
 		Material* _material;

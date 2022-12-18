@@ -13,13 +13,20 @@ namespace HW
 
 	Texture::~Texture()
 	{
-		//stbi_image_free(_textureBytes);
+		stbi_image_free(_textureBytes);
 	}
 
 	void Texture::Init()
 	{
 		_targetBuffer = GL_TEXTURE_2D;
 		glGenTextures(1, &_id);
+		_uvBuffer = new float[8]
+		{
+			0, 0,
+			1, 0,
+			1, 1,
+			0, 1
+		};
 
 		BindAndLoad();
 	}
@@ -27,7 +34,10 @@ namespace HW
 	void Texture::BindAndLoad()
 	{
 		glBindTexture(_targetBuffer, _id);
-		glTexImage2D(_targetBuffer, 0, 4, _width, _height, 0, GL_RGBA, GL_UNSIGNED_BYTE, _textureBytes);
+		glTexImage2D(_targetBuffer, 0, GL_RGBA, _width, _height, 0, GL_RGBA, GL_UNSIGNED_BYTE, _textureBytes);
+		glGenerateMipmap(GL_TEXTURE_2D);
+		//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 		_isLoaded = true;
 	}
 

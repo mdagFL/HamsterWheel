@@ -51,7 +51,7 @@ namespace HW
 		}
 	}
 
-	void HW::Application::AddGameObject(GameObject* object)
+	void HW::Application::CreateGameObject(const GameObject &objPrefab)
 	{
 		_gameObjects.push_back(object);
 	}

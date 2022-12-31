@@ -29,6 +29,8 @@
     <ClCompile Include="src\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\AnimatedMaterial.h" />
+    <ClInclude Include="include\Animation.h" />
     <ClInclude Include="include\Application.h" />
     <ClInclude Include="include\EntryPoint.h" />
     <ClInclude Include="include\GameObject.h" />
@@ -37,6 +39,7 @@
     <ClInclude Include="include\Renderer.h" />
     <ClInclude Include="include\RenderObject.h" />
     <ClInclude Include="include\ShaderProgram.h" />
+    <ClInclude Include="include\Sprite.h" />
     <ClInclude Include="include\Texture.h" />
     <ClInclude Include="include\Transform.h" />
     <ClInclude Include="vendor\stb_image\stb_image.h" />

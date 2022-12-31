@@ -22,14 +22,13 @@ void TheGame::OnUpdate()
 	{
 		using namespace HW;
 		ShaderProgram* defaultShader = new ShaderProgram("C:\\dev\\git\\HamsterWheel\\HamsterWheel\\ClientExample\\res\\shader\\default.shader");
-		Texture* testTexture = new Texture("D:\\Randy's_Disk\\Pictures_D\\ahamam2.png");
+		Texture* testTexture = new Texture("C:\\Users\\mailm\\Pictures\\rat.PNG");
 		Material* testMaterial = new Material(defaultShader, testTexture);
-		RenderObject* o = new RenderObject(testMaterial);
-		this->AddGameObject(o);
+		RenderObject o(testMaterial);
+		this->CreateGameObject(o);
 		init = true;
 	}
 
-	
 }
 
 HW::Application* HW::CreateApplication()

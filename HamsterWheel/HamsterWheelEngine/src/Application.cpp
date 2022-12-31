@@ -53,9 +53,13 @@ namespace HW
 
 	void HW::Application::CreateGameObject(const GameObject &objPrefab)
 	{
-		_gameObjects.push_back(object);
+		GameObject *instance = new GameObject(objPrefab);
+		_gameObjects.push_back(instance);
 	}
-
+	void HW::Application::CreateGameObject(const RenderObject& objPrefab)
+	{
+		CreateGameObject((GameObject)objPrefab);
+	}
 	void HW::Application::OnUpdate()
 	{
 

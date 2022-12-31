@@ -23,9 +23,7 @@ namespace HW
 		void Run();
 		void ResizeWindow(int width, int height);
 		void CreateGameObject(const GameObject &objPrefab);
-		void CreateGameObject(const RenderObject& objPrefab);
->>>>>>> Stashed changes
-		
+		void CreateGameObject(const RenderObject& objPrefab);		
 		Application(int width, int height);
 		~Application();
 	private:

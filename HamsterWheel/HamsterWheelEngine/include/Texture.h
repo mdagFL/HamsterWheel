@@ -14,7 +14,7 @@ namespace HW
 
 		// Return openGL assigned ID
 		unsigned int GetId() const { return _id; }
-
+	protected:
 
 	private:
 		void Init();

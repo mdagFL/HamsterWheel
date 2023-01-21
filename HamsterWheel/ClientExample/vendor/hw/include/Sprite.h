@@ -12,7 +12,7 @@ namespace HW
 		Sprite( void );
 		~Sprite( void );
 		void Update(float deltaTime);
-		void AddAnimation(Animation animation, std::string name);
+		void AddAnimation(const Animation &animation, std::string name);
 		void PlayAnimation(std::string name);
 	protected:
 	private:

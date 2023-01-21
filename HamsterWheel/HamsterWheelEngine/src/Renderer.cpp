@@ -42,12 +42,6 @@ Renderer::Renderer(int width, int height)
 void Renderer::Render(const std::vector<GameObject*> &objects, GLFWwindow* window)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	// immediate mode for testing
-	//glBegin(GL_TRIANGLES);
-	//glVertex3f(-0.5f, 0.5f, 0.5f);
-	//glVertex3f(0.5f, 0.7f, 0.5f);
-	//glVertex3f(-0.8, -0.5f, 0.5f);
-	//glEnd();
 	
 	for (int i = 0; i < objects.size(); i++)
 		 objects[i]->Render();

@@ -7,6 +7,7 @@ namespace HW
 {
 	class Texture
 	{
+		friend class RenderObject;
 	public:
 		Texture(std::string path);
 		~Texture();
@@ -24,6 +25,7 @@ namespace HW
 		bool _isLoaded;
 		unsigned char* _textureBytes;
 		unsigned int _id{};
+		float* _uvBuffer;
 		int _width;
 		int _height;
 		GLenum _targetBuffer;

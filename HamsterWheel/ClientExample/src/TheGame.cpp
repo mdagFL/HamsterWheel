@@ -25,7 +25,7 @@ void TheGame::OnUpdate()
 		Texture* testTexture = new Texture("C:\\Users\\mailm\\Pictures\\rat.PNG");
 		Material* testMaterial = new Material(defaultShader, testTexture);
 		RenderObject o(testMaterial);
-		this->CreateGameObject(o);
+		this->_objectManager.CreateGameObject(o);
 		init = true;
 	}
 

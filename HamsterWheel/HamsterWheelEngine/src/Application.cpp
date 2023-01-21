@@ -45,21 +45,12 @@ namespace HW
 		while (!glfwWindowShouldClose(_window))
 		{
 			OnUpdate();
-			_Renderer->Render(_gameObjects, _window);
+			_Renderer->Render(_objectManager._gameObjects, _window);
 			OnRender();
 			glfwPollEvents();
 		}
 	}
 
-	void HW::Application::CreateGameObject(const GameObject &objPrefab)
-	{
-		GameObject *instance = new GameObject(objPrefab);
-		_gameObjects.push_back(instance);
-	}
-	void HW::Application::CreateGameObject(const RenderObject& objPrefab)
-	{
-		CreateGameObject((GameObject)objPrefab);
-	}
 	void HW::Application::OnUpdate()
 	{
 

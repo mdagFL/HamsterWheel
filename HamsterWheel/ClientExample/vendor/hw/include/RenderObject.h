@@ -27,7 +27,6 @@ namespace HW
 	{
 	public:
 		
-
 		RenderObject();
 		RenderObject(Material* material);
 		RenderObject(float* vertexBuffer, unsigned int* elementBuffer, VertexAttribParams& params, Material* material);
@@ -40,6 +39,8 @@ namespace HW
 		unsigned int* _indexBuffer;
 		unsigned int _vertexBufferId;
 		unsigned int _indexBufferId;
+		unsigned int _nVerts;
+		unsigned int _nPositionComponents;
 		int _mode;
 		
 		Material* _material;

@@ -27,7 +27,6 @@ namespace HW
 	{
 	public:
 		
-
 		RenderObject();
 		RenderObject(Material* material);
 		RenderObject(float* vertexBuffer, unsigned int* elementBuffer, VertexAttribParams& params, Material* material);

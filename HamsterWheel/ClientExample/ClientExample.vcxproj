@@ -164,14 +164,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\TheGame.h" />
+    <ClInclude Include="vendor\hw\include\AnimatedMaterial.h" />
+    <ClInclude Include="vendor\hw\include\Animation.h" />
     <ClInclude Include="vendor\hw\include\Application.h" />
+    <ClInclude Include="vendor\hw\include\Camera.h" />
     <ClInclude Include="vendor\hw\include\EntryPoint.h" />
     <ClInclude Include="vendor\hw\include\GameObject.h" />
     <ClInclude Include="vendor\hw\include\Mat4.h" />
     <ClInclude Include="vendor\hw\include\Material.h" />
+    <ClInclude Include="vendor\hw\include\ObjectManager.h" />
     <ClInclude Include="vendor\hw\include\Renderer.h" />
     <ClInclude Include="vendor\hw\include\RenderObject.h" />
     <ClInclude Include="vendor\hw\include\ShaderProgram.h" />
+    <ClInclude Include="vendor\hw\include\Sprite.h" />
     <ClInclude Include="vendor\hw\include\Texture.h" />
     <ClInclude Include="vendor\hw\include\Transform.h" />
     <ClInclude Include="vendor\stb_image\stb_image.h" />

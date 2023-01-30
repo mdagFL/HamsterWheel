@@ -19,7 +19,6 @@ namespace HW
 		// Public state, to be used as extensions of public interface
 		Renderer* _Renderer;
 		ObjectManager _objectManager;
-		Camera _camera;
 
 		// Public interface
 		void Render();

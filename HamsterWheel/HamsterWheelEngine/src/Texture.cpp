@@ -8,7 +8,14 @@ namespace HW
 	Texture::Texture(std::string path)
 	{
 		_textureBytes = stbi_load(path.c_str(), &_width, &_height, nullptr, 0);
-		Init();
+		if (_textureBytes)
+		{
+			Init();
+		}
+		else
+		{
+			printf("ERROR: failed to load texture at %s\n", path.c_str());
+		}
 	}
 
 	Texture::~Texture()
@@ -28,7 +35,10 @@ namespace HW
 			0, 1
 		};
 
-		BindAndLoad();
+		if (_textureBytes)
+		{
+			BindAndLoad();
+		}
 	}
 
 	void Texture::BindAndLoad()

@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include "RenderObject.h"
+#include "Camera.h"
 
 namespace HW
 {
@@ -12,15 +13,14 @@ namespace HW
 	
 	class Renderer
 	{
-
 	public:		
 		
+		HW::Camera _camera;
 		void Init(int width, int height);
 		void Render(const std::vector<GameObject*> &objects, GLFWwindow* window);
 		Renderer();
 		Renderer(int width, int height);
 		~Renderer();
-
 		
 	private:
 		

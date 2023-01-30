@@ -22,10 +22,41 @@ void TheGame::OnUpdate()
 	{
 		using namespace HW;
 		ShaderProgram* defaultShader = new ShaderProgram("C:\\dev\\git\\HamsterWheel\\HamsterWheel\\ClientExample\\res\\shader\\default.shader");
-		Texture* testTexture = new Texture("C:\\Users\\mailm\\Pictures\\rat.PNG");
+		Texture* testTexture = new Texture("D:\\Randy's_Disk\\Pictures_D\\ahamam2.png");
 		Material* testMaterial = new Material(defaultShader, testTexture);
-		RenderObject o(testMaterial);
-		this->_objectManager.CreateGameObject(o);
+
+		float testVertexBuffer[12] =
+		{
+			-0.5, 0.5, 0,
+			 0.5, 0.5, 0,
+			-0.5,-0.5, 0,
+			 0.5,-0.5, 0
+		};
+
+		float testTextureAttribBuffer[8]
+		{
+			0, 0,
+			1, 0,
+			0, 1,
+			1, 1
+		};
+
+		unsigned int testIndexBuffer[4] = { 0, 1, 2, 3 };
+
+		VertexBufferObject *testVbo = new VertexBufferObject(testVertexBuffer, 12);
+		VertexArrayObject  *testVao = new VertexArrayObject(testIndexBuffer, 4, GL_TRIANGLE_STRIP);
+
+		VertexAttribute* testAttrib = new VertexAttribute(glGetAttribLocation(defaultShader->GetId(), "position"), 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), 0, testVbo);
+
+		VertexBufferObject* testTextureVbo = new VertexBufferObject(testTextureAttribBuffer, 8);
+		VertexAttribute* testTextureAttrib = new VertexAttribute(glGetAttribLocation(defaultShader->GetId(), "inTexCoord"), 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0, testTextureVbo);
+
+		testVao->AddAttribute(*testAttrib);
+		testVao->AddAttribute(*testTextureAttrib);
+
+		RenderObject* testRenderPrefab = new RenderObject(testVao, testVbo, testMaterial);
+		this->_Renderer->_camera.SetCameraShader(defaultShader, "viewTranslate");
+		this->_objectManager.CreateGameObject(*testRenderPrefab);
 		init = true;
 	}
 

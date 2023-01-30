@@ -4,47 +4,110 @@
 #include "Renderer.h"
 #include "Material.h"
 
-struct VertexAttribParams
-{	
-	int _Index;
-	int _Stride;
-	int _Components;
-	int _Normalized;
-	int _Type;
-	int _Offset;
-	VertexAttribParams(int index, int components, int type, int normalized, int stride, int offset)
-		: _Index{ index }, _Stride{ stride }, _Components{ components }, _Normalized{ normalized },
-		_Type{ type }, _Offset{ offset } {}	
-	
-	VertexAttribParams() { 
-		return;
-	}
-};
+#include <string>
+#include <map>
 
 namespace HW
 {
+
+	struct VertexBufferObject
+	{
+		float* _vertexBuffer;
+		unsigned int  _vertexBufferCount;
+		unsigned int  _vboId;
+
+		VertexBufferObject( float* vertexBuffer, unsigned int vertexBufferCount) 
+			: _vertexBuffer{ vertexBuffer }, _vertexBufferCount { vertexBufferCount }
+		{
+
+		}
+
+		~VertexBufferObject()
+		{
+			delete[] _vertexBuffer;
+		}
+	};
+
+	struct VertexAttribute
+	{
+		VertexBufferObject* _Vbo;
+		int _Index;
+		int _Stride;
+		int _Components;
+		int _Normalized;
+		int _Type;
+		int _Offset;
+		VertexAttribute(int index, int components, int type, int normalized, int stride, int offset, VertexBufferObject* vbo)
+			: _Index{ index }, _Stride{ stride }, _Components{ components }, _Normalized{ normalized },
+			_Type{ type }, _Offset{ offset }, _Vbo{ vbo } 
+		{
+
+		}
+
+		VertexAttribute() {
+			return;
+		}
+	};
+
+	struct VertexArrayObject
+	{
+		std::vector<VertexAttribute> _attributes;
+		unsigned int _id;
+		unsigned int* _indexBuffer;
+		unsigned int  _indexBufferCount;
+		unsigned int  _indexBufferId;
+		int		      _drawMode;
+
+		VertexArrayObject(unsigned int* indexBuffer, unsigned int indexBufferCount, int drawMode)
+			: _indexBuffer{ indexBuffer }, _indexBufferCount{ indexBufferCount }, _drawMode{ drawMode }
+		{
+			Init();
+		}
+
+		void AddAttribute(VertexAttribute& attribute)
+		{
+			_attributes.push_back(attribute);
+			glBindVertexArray(_id);
+			glBindBuffer(GL_ARRAY_BUFFER, attribute._Vbo->_vboId);
+
+			glEnableVertexAttribArray(attribute._Index);
+			glVertexAttribPointer(attribute._Index, attribute._Components, attribute._Type, attribute._Normalized,
+				attribute._Stride, 0);
+		}
+
+		void Init()
+		{
+			// Setup VAO in OGL
+			glGenVertexArrays(1, &_id);
+			glBindVertexArray(_id);
+
+			// Setup index buffer if it exists
+			if (_indexBuffer)
+			{
+				glGenBuffers(1, &_indexBufferId);
+				glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBufferId);
+				glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * _indexBufferCount, _indexBuffer, GL_STATIC_DRAW); //vertexBufferCount
+			}
+
+		}
+
+		~VertexArrayObject()
+		{
+			delete[] _indexBuffer;
+		}
+	};
+
 	class RenderObject : public GameObject
 	{
 	public:
-		
-		RenderObject();
-		RenderObject(Material* material);
-		RenderObject(float* vertexBuffer, unsigned int* elementBuffer, VertexAttribParams& params, Material* material);
+		RenderObject(VertexArrayObject* vao, VertexBufferObject* vbo, Material* material);
 		~RenderObject();
 		void Render() const override;
 
 	private:
-		void Init(Material* material);
-		float* _vertexBuffer;
-		unsigned int* _indexBuffer;
-		unsigned int _vertexBufferId;
-		unsigned int _indexBufferId;
-		unsigned int _nVerts;
-		unsigned int _nPositionComponents;
-		int _mode;
-		
+		void Init(VertexArrayObject* vao, VertexBufferObject* vbo, Material* material);
+		VertexArrayObject* _vao;
+		VertexBufferObject* _vbo;
 		Material* _material;
-
-		VertexAttribParams _attribParams;
 	};
 }

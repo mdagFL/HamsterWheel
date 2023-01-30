@@ -26,6 +26,7 @@ namespace HW
 		// Private state
 		std::vector<GameObject*> _gameObjects;
 		std::vector<RenderObject*> _renderObjects;
+		VertexArrayObject pa;
 	};
 
 }

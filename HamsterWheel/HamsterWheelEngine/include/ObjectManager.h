@@ -12,8 +12,8 @@ namespace HW
 	{
 	public:
 		// Public interface
-		GameObject* CreateGameObject(const GameObject& objPrefab);
-		GameObject* CreateGameObject(const RenderObject& objPrefab);
+		GameObject* CreateGameObject(GameObject& objPrefab);
+		//GameObject* CreateGameObject(const RenderObject& objPrefab);
 		void DestroyGameObject(unsigned int id);
 		void DestroyGameObject(std::string name);
 		void DestroyGameObject(GameObject* object);

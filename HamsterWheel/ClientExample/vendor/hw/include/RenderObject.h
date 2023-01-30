@@ -4,7 +4,7 @@
 #include "Renderer.h"
 #include "Material.h"
 
-struct VertexAttribParams
+struct VertexAttribute
 {	
 	int _Index;
 	int _Stride;
@@ -12,11 +12,11 @@ struct VertexAttribParams
 	int _Normalized;
 	int _Type;
 	int _Offset;
-	VertexAttribParams(int index, int components, int type, int normalized, int stride, int offset)
+	VertexAttribute(int index, int components, int type, int normalized, int stride, int offset)
 		: _Index{ index }, _Stride{ stride }, _Components{ components }, _Normalized{ normalized },
 		_Type{ type }, _Offset{ offset } {}	
 	
-	VertexAttribParams() { 
+	VertexAttribute() { 
 		return;
 	}
 };
@@ -29,7 +29,7 @@ namespace HW
 		
 		RenderObject();
 		RenderObject(Material* material);
-		RenderObject(float* vertexBuffer, unsigned int* elementBuffer, VertexAttribParams& params, Material* material);
+		RenderObject(float* vertexBuffer, unsigned int* elementBuffer, VertexAttribute& params, Material* material);
 		~RenderObject();
 		void Render() const override;
 
@@ -45,6 +45,6 @@ namespace HW
 		
 		Material* _material;
 
-		VertexAttribParams _attribParams;
+		VertexAttribute _attribParams;
 	};
 }

@@ -21,11 +21,16 @@ namespace HW
 			std::cout << "Error initializing GLFW." << std::endl;
 
 		_window = glfwCreateWindow(_width, _height, "game", nullptr, nullptr);
-		glfwMakeContextCurrent(_window);
+		if (_window)
+		{
+			glfwMakeContextCurrent(_window);
+		}
+		else
+		{
+			printf("ERROR: Failed to create GLFW window\n");
+		}
 
 		_Renderer = new Renderer(_width, _height);
-
-
 	}
 
 	HW::Application::Application(int width, int height)

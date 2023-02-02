@@ -144,6 +144,7 @@
       <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)vendor\GLEW\include\;$(ProjectDir)vendor\stb_image\;$(ProjectDir)vendor\GLFW\include\</AdditionalIncludeDirectories>
       <DisableLanguageExtensions>true</DisableLanguageExtensions>
       <TreatWarningAsError>false</TreatWarningAsError>
+      <Optimization>MaxSpeed</Optimization>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -182,6 +183,7 @@
       <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)vendor\GLEW\include\;$(ProjectDir)vendor\stb_image\;$(ProjectDir)vendor\GLFW\include\</AdditionalIncludeDirectories>
       <DisableLanguageExtensions>true</DisableLanguageExtensions>
       <TreatWarningAsError>false</TreatWarningAsError>
+      <Optimization>MaxSpeed</Optimization>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

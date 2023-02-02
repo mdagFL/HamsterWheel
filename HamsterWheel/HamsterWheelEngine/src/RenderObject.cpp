@@ -31,7 +31,6 @@ namespace HW
 
 	void RenderObject::Render() const
 	{
-		std::cout << "good\n";
 		glBindVertexArray(_vao->_id);
 
 		if (_material)
@@ -53,6 +52,7 @@ namespace HW
 		{
 			printf("no index buffer - not implemented!!\n");
 		}
+		glBindVertexArray(0);
 
 	}
 

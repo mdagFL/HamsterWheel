@@ -42,8 +42,8 @@ void main()
 		-viewTranslate.x, -viewTranslate.y, -viewTranslate.z, 1.0
 	);
 
-	//gl_Position = positionTransformation * vec4(position, 1.0);
-	gl_Position = vec4(position, 1.0);
+	gl_Position = orthoProjectionMatrix * viewTranslateMatrix * positionTransformation * vec4(position, 1.0);
+	//gl_Position = vec4(position, 1.0);
 	texCoord = inTexCoord;
 
 };
@@ -60,6 +60,6 @@ void main()
 
 	vec4 texColor = texture(tex, texCoord);
 	gl_FragColor = texColor;
-	gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+	//gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
 
 };

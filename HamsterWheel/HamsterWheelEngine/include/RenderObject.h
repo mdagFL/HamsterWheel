@@ -19,7 +19,15 @@ namespace HW
 		VertexBufferObject( float* vertexBuffer, unsigned int vertexBufferCount) 
 			: _vertexBuffer{ vertexBuffer }, _vertexBufferCount { vertexBufferCount }
 		{
+			Init();
+		}
 
+		void Init()
+		{
+			glGenBuffers(1, &_vboId);
+			glBindBuffer(GL_ARRAY_BUFFER, _vboId);
+			glBufferData(GL_ARRAY_BUFFER, sizeof(float) * _vertexBufferCount, _vertexBuffer, GL_STATIC_DRAW);
+			glBindBuffer(GL_ARRAY_BUFFER, 0);
 		}
 
 		~VertexBufferObject()
@@ -42,10 +50,6 @@ namespace HW
 			_Type{ type }, _Offset{ offset }, _Vbo{ vbo } 
 		{
 
-		}
-
-		VertexAttribute() {
-			return;
 		}
 	};
 
@@ -88,6 +92,7 @@ namespace HW
 				glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBufferId);
 				glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * _indexBufferCount, _indexBuffer, GL_STATIC_DRAW); //vertexBufferCount
 			}
+			glBindVertexArray(0);
 
 		}
 

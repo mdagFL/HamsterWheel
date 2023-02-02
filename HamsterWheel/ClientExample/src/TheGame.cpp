@@ -25,7 +25,7 @@ void TheGame::OnUpdate()
 		Texture* testTexture = new Texture("D:\\Randy's_Disk\\Pictures_D\\ahamam2.png");
 		Material* testMaterial = new Material(defaultShader, testTexture);
 
-		float testVertexBuffer[12] =
+		float *testVertexBuffer = new float[12]
 		{
 			-0.5, 0.5, 0,
 			 0.5, 0.5, 0,
@@ -33,7 +33,7 @@ void TheGame::OnUpdate()
 			 0.5,-0.5, 0
 		};
 
-		float testTextureAttribBuffer[8]
+		float *testTextureAttribBuffer = new float[8]
 		{
 			0, 0,
 			1, 0,
@@ -41,25 +41,31 @@ void TheGame::OnUpdate()
 			1, 1
 		};
 
-		unsigned int testIndexBuffer[4] = { 0, 1, 2, 3 };
+		unsigned int *testIndexBuffer = new unsigned int[4]{ 0, 1, 2, 3 };
 
 		VertexBufferObject *testVbo = new VertexBufferObject(testVertexBuffer, 12);
 		VertexArrayObject  *testVao = new VertexArrayObject(testIndexBuffer, 4, GL_TRIANGLE_STRIP);
 
-		VertexAttribute* testAttrib = new VertexAttribute(glGetAttribLocation(defaultShader->GetId(), "position"), 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), 0, testVbo);
+		int testLoc = glGetAttribLocation(defaultShader->GetId(), "position");
+		VertexAttribute* testAttrib = new VertexAttribute(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), 0, testVbo);
 
+		int testTexLoc = glGetAttribLocation(defaultShader->GetId(), "inTexCoord");
 		VertexBufferObject* testTextureVbo = new VertexBufferObject(testTextureAttribBuffer, 8);
-		VertexAttribute* testTextureAttrib = new VertexAttribute(glGetAttribLocation(defaultShader->GetId(), "inTexCoord"), 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0, testTextureVbo);
+		VertexAttribute* testTextureAttrib = new VertexAttribute(1, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0, testTextureVbo);
 
 		testVao->AddAttribute(*testAttrib);
 		testVao->AddAttribute(*testTextureAttrib);
 
 		RenderObject* testRenderPrefab = new RenderObject(testVao, testVbo, testMaterial);
 		this->_Renderer->_camera.SetCameraShader(defaultShader, "viewTranslate");
+		this->_Renderer->_camera._screenTransform._Position = Vector3(0.5, 0.5, 0);
 		this->_objectManager.CreateGameObject(*testRenderPrefab);
+		testRenderPrefab->_Transform._Position = Vector3(-0.5, -0.5, 0);
+		this->_objectManager.CreateGameObject(*testRenderPrefab);
+
 		init = true;
 	}
-
+	Application::OnUpdate();
 }
 
 HW::Application* HW::CreateApplication()

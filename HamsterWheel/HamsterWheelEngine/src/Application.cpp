@@ -58,7 +58,7 @@ namespace HW
 
 	void HW::Application::OnUpdate()
 	{
-
+		_Renderer->_camera.Update(0);
 	}
 
 	HW::Application::~Application()

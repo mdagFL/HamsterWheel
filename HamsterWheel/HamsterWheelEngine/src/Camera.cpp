@@ -25,7 +25,7 @@ namespace HW
 		static float time = 0;
 		time += 0.01;
 		_screenTransform._Position.X += sin(time);
-		int loc = glGetUniformLocation(_cameraShader->GetId(), _screenUniformName.c_str());
-		glUniform3fv(loc, 1, &_screenTransform._Position.X);
+
+		this->_cameraShader->PassUniform(_screenUniformName.c_str(), _screenTransform._Position);
 	}
 }

@@ -32,8 +32,8 @@ namespace HW
 
 		void SetActive() const;
 
-		void PassUniform(const std::string& name, const float value);
-		void PassUniform(const std::string& name, const Vector3& value);
+		void PassUniform(const std::string& name, const float value) const;
+		void PassUniform(const std::string& name, const Vector3& value) const;
 		 unsigned int GetId() const { return _id; }
 		ShaderProgram();
 		~ShaderProgram();

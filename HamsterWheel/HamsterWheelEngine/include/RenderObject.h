@@ -108,6 +108,7 @@ namespace HW
 		RenderObject(VertexArrayObject* vao, VertexBufferObject* vbo, Material* material);
 		~RenderObject();
 		void Render() const override;
+		void Update() override;
 
 	private:
 		void Init(VertexArrayObject* vao, VertexBufferObject* vbo, Material* material);

@@ -6,12 +6,11 @@ layout(location = 1) in vec2 inTexCoord;
 out vec2 texCoord;
 
 uniform vec2 res;
-
-uniform vec3 pos;
 uniform float rotY;
 
 uniform vec3 worldPos;
 uniform vec3 viewTranslate;
+uniform vec3 modelTranslate;
 uniform float worldRotY;
 
 void main()
@@ -20,10 +19,10 @@ void main()
 	mat4 modelMatrix;
 	mat4 positionTransformation = mat4
 	(
-		1, 0, 0, pos.x,
-		0, 1, 0, pos.y,
-		0, 0, 1, pos.z,
-		0, 0, 0, 1
+		1, 0, 0, 0,
+		0, 1, 0, 0,
+		0, 0, 1, 0,
+		modelTranslate.x, modelTranslate.y, modelTranslate.z, 1
 	);
 
 	mat4 orthoProjectionMatrix = mat4

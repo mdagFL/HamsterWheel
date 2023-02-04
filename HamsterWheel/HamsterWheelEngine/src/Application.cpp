@@ -30,6 +30,7 @@ namespace HW
 			printf("ERROR: Failed to create GLFW window\n");
 		}
 
+		glfwWindowHint(GLFW_OPENGL_CORE_PROFILE, GL_TRUE);
 		_Renderer = new Renderer(_width, _height);
 	}
 
@@ -59,6 +60,10 @@ namespace HW
 	void HW::Application::OnUpdate()
 	{
 		_Renderer->_camera.Update(0);
+		for (int i = 0; i < _objectManager._gameObjects.size(); i++)
+		{
+			_objectManager._gameObjects[i]->Update();
+		}
 	}
 
 	HW::Application::~Application()

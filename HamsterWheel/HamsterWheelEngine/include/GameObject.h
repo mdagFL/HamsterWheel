@@ -12,7 +12,8 @@ namespace HW
 		GameObject();
 		~GameObject();
 		Transform _Transform{};
-		virtual void Render() const { std::cout << "bad\n"; } // empty virtual? it's ok??
+		virtual void Render() const { std::cout << "bad\n"; }
+		virtual void Update() {}
 	private:
 
 	};

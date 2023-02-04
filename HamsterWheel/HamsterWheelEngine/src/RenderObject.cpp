@@ -14,6 +14,7 @@ namespace HW
 		_vao = vao;
 		_vbo = vbo;
 
+
 		if (_material && _material->_texture)
 		{
 			glBindTexture(GL_TEXTURE_2D, this->_material->_texture->_id);
@@ -31,7 +32,9 @@ namespace HW
 
 	void RenderObject::Render() const
 	{
+		// apply instance transformations
 		glBindVertexArray(_vao->_id);
+		this->_material->_shaderProgram->PassUniform("modelTranslate", _Transform._Position);
 
 		if (_material)
 		{
@@ -52,10 +55,14 @@ namespace HW
 		{
 			printf("no index buffer - not implemented!!\n");
 		}
-		glBindVertexArray(0);
+		//glBindVertexArray(0);
 
 	}
 
+	void RenderObject::Update()
+	{
+		this->_material->_shaderProgram->PassUniform("modelTranslate", _Transform._Position);
+	}
 
 }
 

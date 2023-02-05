@@ -9,14 +9,18 @@ namespace HW
 	{
 	public:
 		Transform _worldTransform;
-		Transform _screenTransform;
-		Camera( const ShaderProgram* shader, std::string screenUniformName );
+		void SetScreenFOV(float width, float height);
+		// projectionMatrixUniformComponentName will have 0 to 3 appended for each column.
+		Camera( const ShaderProgram* shader, std::string worldTranslateUniformName, std::string worldRotateUniformName,
+			std::string projectionMatrixUniformComponentName );
 		Camera(void);
-		void SetCameraShader(const ShaderProgram* shader, std::string screenUniformName);
+		void SetCameraShader(const ShaderProgram* shader, std::string screenUniformName, std::string worldRotateUniformName,
+			std::string projectionMatrixUniformComponentName);
 		void Update( float delta_time );
 	private:
 		const ShaderProgram* _cameraShader;
-		std::string _screenUniformName;
-
+		std::string _projectionMatrixUniformComponentName;
+		std::string _worldTranslateUniformName;
+		std::string _worldRotateUniformName;
 	};
 }

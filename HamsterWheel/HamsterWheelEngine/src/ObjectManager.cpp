@@ -16,7 +16,7 @@ namespace HW
 		}
 
 		_gameObjects.push_back(instance);
-		return &objPrefab;
+		return instance;
 	}
 	//GameObject* ObjectManager::CreateGameObject(const RenderObject& objPrefab)
 	//{

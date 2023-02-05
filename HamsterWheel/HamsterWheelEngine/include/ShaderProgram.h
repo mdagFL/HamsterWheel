@@ -1,9 +1,10 @@
 #pragma once
 #define GLEW_STATIC
 #include "glew.h"
-#include <string>
 #include "Transform.h"
+#include "Mat4.h"
 
+#include <string>
 namespace HW
 {
 
@@ -34,7 +35,9 @@ namespace HW
 
 		void PassUniform(const std::string& name, const float value) const;
 		void PassUniform(const std::string& name, const Vector3& value) const;
-		 unsigned int GetId() const { return _id; }
+		void PassUniform(const std::string& name, const Mat4& value) const;
+		void PassUniform(const std::string& name, const Vector4& value) const;
+		unsigned int GetId() const { return _id; }
 		ShaderProgram();
 		~ShaderProgram();
 

@@ -22,7 +22,17 @@ namespace HW
 			};
 			return Mat4(matrix);
 		}
-		const static int j = 2;
+		static Mat4 OrthographicProjection(float right, float left, float top, float bottom, float far, float near)
+		{
+			float matrix[16] =
+			{
+				2.0 / right - left, 0,					  0,				   -((right + left) / (right - left)),
+				0,					2.0 / (top - bottom), 0,				   -((top + bottom) / (top - bottom)),
+				0,					0,					  -2.0 / (far - near), -((far + near) / (far - near)),
+				0,					0,					  0,                   1
+			};
+			return Mat4(matrix);
+		}
 
 		Mat4()
 		{

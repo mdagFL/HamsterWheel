@@ -1,4 +1,6 @@
 #include "ShaderProgram.h"
+#include "Mat4.h"
+
 #include <iostream>
 #include <fstream>
 
@@ -126,7 +128,19 @@ namespace HW
 		SetActive();
 		int location = glGetUniformLocation(_id, name.c_str());
 		glUniform3fv(location, 1, (float*)(&value));
-
 	}
 
+	void ShaderProgram::PassUniform(const std::string& name, const Vector4& value) const
+	{
+		SetActive();
+		int location = glGetUniformLocation(_id, name.c_str());
+		glUniform4fv(location, 1, (float*)(&value));
+	}
+
+	void ShaderProgram::PassUniform(const std::string& name, const Mat4& value) const
+	{
+		SetActive();
+		int location = glGetUniformLocation(_id, name.c_str());
+		glUniform4fv(location, 4, (float*)(&value._Matrix));
+	}
 }

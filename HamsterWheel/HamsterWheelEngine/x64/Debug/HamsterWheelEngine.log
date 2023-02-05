@@ -1,3 +1,9 @@
-﻿  RenderObject.cpp
-C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\include\RenderObject.h(78,93): warning C4244: 'argument': conversion from 'int' to 'GLboolean', possible loss of data
+﻿  Camera.cpp
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\include\Mat4.h(29,17): warning C4838: conversion from 'double' to 'float' requires a narrowing conversion
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\include\Mat4.h(29,17): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\include\Mat4.h(30,16): warning C4838: conversion from 'double' to 'float' requires a narrowing conversion
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\include\Mat4.h(30,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\include\Mat4.h(31,26): warning C4838: conversion from 'double' to 'float' requires a narrowing conversion
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\include\Mat4.h(31,26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\src\Camera.cpp(36,28): warning C4100: 'delta_time': unreferenced formal parameter
   HamsterWheelEngine.vcxproj -> C:\dev\git\HamsterWheel\HamsterWheel\HamsterWheelEngine\Debug\HamsterWheelEngine.lib

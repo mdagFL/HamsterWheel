@@ -8,6 +8,7 @@
 
 #include <string>
 #include <vector>
+#include <chrono>
 
 
 namespace HW
@@ -16,27 +17,33 @@ namespace HW
 	class Application
 	{
 	public:
-		// Public state, to be used as extensions of public interface
+		// Public state
 		Renderer* _Renderer;
 		ObjectManager _objectManager;
 
 		// Public interface
-		void Render();
-		virtual void OnRender();
-		void Update();
-		virtual void OnUpdate();
-		void Init();
 		void Run();
-		void ResizeWindow(int width, int height);	
 		Application(int width, int height);
 		~Application();
 
-	private:
-		// Private state
+	protected:
+		// Extension interface
+		void Render();
+		virtual void OnRender();
+		void Update(double deltaTime);
+		virtual void OnUpdate(double deltaTime);
+		void Init();
+		virtual void OnInit() {}
+		void ResizeWindow(int width, int height);		
+
 		GLFWwindow* _window;
 		int _width;
 		int _height;
 		float _aspectRatio;
+		std::chrono::steady_clock::time_point _lastUpdate;
+
+	private:
+		// Private state
 
 	};
 	

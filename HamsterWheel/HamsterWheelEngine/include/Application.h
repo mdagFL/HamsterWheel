@@ -1,6 +1,6 @@
 #pragma once
 #define GLEW_STATIC
-#include "glew.h"
+#include "GL/glew.h"
 #include "GLFW/glfw3.h"
 #include "Renderer.h"
 #include "ObjectManager.h"
@@ -40,7 +40,7 @@ namespace HW
 		int _width;
 		int _height;
 		float _aspectRatio;
-		std::chrono::steady_clock::time_point _lastUpdate;
+		std::chrono::_V2::steady_clock::time_point _lastUpdate;
 
 	private:
 		// Private state

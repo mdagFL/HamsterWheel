@@ -2,7 +2,7 @@
 #pragma once
 #include <string>
 #include <iostream>
-#include "glew.h"
+#include "GL/glew.h"
 namespace HW
 {
 	class Texture

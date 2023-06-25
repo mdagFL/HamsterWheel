@@ -60,7 +60,7 @@ namespace HW
 		{
 			// update delta time
 			steady_clock::duration deltaTimeDuration = steady_clock::now() - _lastUpdate;
-			_lastUpdate = std::chrono::high_resolution_clock::now();
+			_lastUpdate = std::chrono::steady_clock::now();
 			double deltaTime = deltaTimeDuration.count() * static_cast<double>(steady_clock::period::num) / steady_clock::period::den;
 
 			Update(deltaTime);
